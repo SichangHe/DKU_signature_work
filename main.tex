@@ -1,3 +1,4 @@
+%! TEX program = lualatex
 \documentclass[11pt,a4paper,oneside]{report}
 
 \usepackage{amsmath,amssymb}
@@ -24,16 +25,8 @@
 \usepackage[style=numeric-comp, url=false]{biblatex}
 \addbibresource{bibfile.bib}
 
-\usepackage[no-math]{fontspec}
-\usepackage{unicode-math}
-\defaultfontfeatures{Ligatures=TeX,Numbers=Lining}
-\setmainfont{Source Serif Pro}[BoldFont={Source Serif Pro Semibold}]
-\setsansfont{Source Sans Pro}[BoldFont={Source Sans Pro Semibold}]
-\IfFontExistsTF{Cambria Math}{\setmathfont{Cambria Math}[Scale=1]}{\setmathfont{Asana Math}}
-
-\usepackage{xeCJK}
-\setCJKmainfont{Noto Sans CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 
 \newcommand{\instructions}[1]{{\color{orange}\itshape #1}}
 
