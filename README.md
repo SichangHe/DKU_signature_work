@@ -1,4 +1,4 @@
-# FedCampus: a Privacy-Preserving Data Platform for Smart Campus
+# FedCampus: A Privacy-Preserving Data Platform for Smart Campus
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
