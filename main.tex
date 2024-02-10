@@ -1,4 +1,4 @@
-%! TEX program = lualatex
+%! TEX program = xelatex
 \documentclass[11pt,a4paper,oneside]{report}
 
 \usepackage{amsmath,amssymb}
@@ -28,6 +28,10 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
+\usepackage{xeCJK}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Songti SC}
+
 \newcommand{\instructions}[1]{{\color{orange}\itshape #1}}
 
 \usepackage{upquote}
@@ -47,7 +51,9 @@
 \newcommand{\authorname}{Sichang He}
 
 % Title (cannot exceed three lines)
-\newcommand{\thetitle}{FedCampus: A Privacy-Preserving Data Platform for Smart Campus}
+\newcommand{\thetitle}{Establishing FedCampus:
+    A Privacy-Preserving Data Platform for Smart Campus
+}
 
 % Date of submission with normal capitalization. Use the format January 29, 2022.
 \newcommand{\submissiondate}{March 7, 2024}
@@ -159,6 +165,9 @@ include individual titles in the acknowledgments. However, it is
 appropriate to state grant numbers and sponsors. Examples would like
 SELF, SRS, SW Grants, etc.}
 
+Thanks to DKU Undergraduate Office for their support via
+the Summer Research Scholars Program.
+
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -198,10 +207,12 @@ literature but do not include a general survey of semi-relevant
 literature.~ State how your work differs from earlier work in the field
 and demonstrate the continuity from the previous work to your own.}
 
+\input{intro}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Material and Methods}
-\label{material-and-methods}
+\chapter{Design}
+\label{design}
 
 \instructions{This section is obviously discipline specific so use the
 nomenclature that is common for your discipline. However, this section
@@ -216,6 +227,15 @@ chemical/biological names of all compounds and chemical formulas of
 substances that are new or uncommon. Use standard systematic
 nomenclature to unambiguously define well-established compounds,
 processes, equipment, etc.}
+
+\input{design}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Implementation}
+\label{implementation}
+
+\input{impl}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -233,6 +253,7 @@ as supporting information.}
 paragraph in which it is referenced. Titles/captions should be kept
 brief.}
 
+\instructions{
 \section{Examples}
 
 Here is some inline math, $x^2 > 1$, and some display math
@@ -263,6 +284,9 @@ olive oil adulteration.}
 \caption{The notorious BTC (Brandon The Cat).}
 \label{fig:1}
 \end{figure}
+}
+
+\input{results}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -274,6 +298,8 @@ results. The objective is to point out the features and limitations of
 the work. Relate your results to current knowledge in the field and to
 the original purpose for undertaking the project.}
 
+\input{discussion}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Conclusions}
@@ -283,6 +309,8 @@ the original purpose for undertaking the project.}
 into the context of the original problem.~ Do not repeat the discussion
 points or include irrelevant material. The conclusion should be based on
 the evidence presented.}
+
+\input{conclusion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -304,8 +332,10 @@ and that is common in Physics, Mathematics, and Computer Science papers.}
 \chapter{Additional Material}
 \label{appendix-a}
 
-This template can be viewed on Overleaf at \url{https://www.overleaf.com/read/hxjcgtkhjqcd}.
-If you have an Overleaf account (either free or paid) you can copy this template to start a new Overleaf project.
-If you do not want an Overleaf account you can install TeX on your computer and download the template files from Overleaf.
+\instructions{This template can be viewed on Overleaf at
+\url{https://www.overleaf.com/read/hxjcgtkhjqcd}.  If you have an Overleaf
+account (either free or paid) you can copy this template to start a new
+Overleaf project.  If you do not want an Overleaf account you can install
+TeX on your computer and download the template files from Overleaf.  }
 
 \end{document}
