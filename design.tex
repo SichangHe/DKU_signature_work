@@ -1,0 +1,30 @@
+\section{Ground Truth}
+
+To preserve user privacy,
+the bottom line is that the raw data must not be collected.
+
+\section{Data Access}
+
+The initial phase of FedCampus operates on participants' health data recorded by
+the Huawei Watch Fit 2.
+100 smartwatches of this model are purchased to be lent to the participants.
+
+In order to conduct research on the data,
+our algorithm needs to access the data from the smartwatch.
+
+In the natural life cycle of the collected health data,
+the data are first synchronized from the participants' smartwatches to
+the Huawei HealthKit on the their smartphone through Bluetooth.
+This is important in two ways:
+first, we do not need to develop any software to run on the smartwatches,
+only the smartphones; second,
+we require the participants to regularly conduct this synchronization process
+themselves, which counts into management complexity.
+
+We deploy different strategies to access the data from the Huawei HealthKit on
+Android and iOS.
+On Android, Huawei provides the Huawei HealthKit API to access the data.
+On iOS, Apple restricts third-party access to private data,
+and unifies such access to Apple HealthKit,
+so we have to first synchronize the data from the Huawei HealthKit to
+the Apple HealthKit, then access the data there.
