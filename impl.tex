@@ -1,19 +1,20 @@
 \section{Accessing the Data}
 
-On Android, we use the Huawei HealthKit API Java package to request
-Huawei HealthKit for the data.
+On Android, we use the Huawei Health Kit API Java package to request
+Huawei Health Kit for the data.
 This API allows access to all the collected raw health data points.
 We call the API from using Kotlin,
 a programming language compatible with Java,
 and aggregate the data into a daily summary.
 % TODO: What are the data types.
-We used Kotlin to integrate with Huawei HealthKit API because
+We used Kotlin to integrate with Huawei Health Kit API because
 we found it to be more concise and maintainable than Java while
 having complete interoperability.
 A special pop-up authentication page is also implemented to request the user for
 permissions to access their health data, as required by Huawei.
 
-On iOS, we indirectly access Apple HealthKit through Flutter's Health package.
+On iOS, we indirectly access Apple HealthKit through Flutter's
+Health~\cite{flutterhealth} package.
 The Health package provides a unified interface to access health data,
 and notifies iOS to request permissions from the user to access the health data.
 Since the Health package can also request health data from Google Fit on
@@ -22,12 +23,12 @@ experimentally accommodate participants who use Android smartphones and
 do not use Huawei smartwatches.
 
 In our internal testing, we noticed that accessing the data could be slow,
-especially when requesting data using the Huawei HealthKit API.
+especially when requesting data using the Huawei Health Kit API.
 To mitigate this issue, we implemented a local cache database.
-Before we request data from either of the HealthKits,
+Before we request data from either of the health kits,
 we first check the cache database for the data.
 If the data is not in the cache database,
-we request the data from the HealthKit and update the cache database.
+we request the data from the health kit and update the cache database.
 % TODO: Not implemented yet.
 We also implemented a background task to periodically update the cache database,
 and the users can also force an update by refreshing the health page in
