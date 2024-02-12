@@ -1,5 +1,85 @@
 \section{Federated Learning}
 
+Federated learning is a promising technique to collaboratively train
+shared machine learning models on edge devices,
+thereby preserving user privacy and eliminating the need to
+transfer raw data~\cite{mcmahan2017communication}.
+
+However, most existing federated learning systems~\cite[e.g.,][]{
+    bonawitz2019towards,ma2019paddlepaddle,liu2021fate,openfl_citation,
+} primarily cater to running simulations on desktop computers or cloud servers,
+which is distinct from our real-world use case.
+These systems cannot be directly leveraged to support our experiments.
+
+\section{Federated Learning on Smartphones}
+
+Several systems have emerged to fulfill the demand for federated learning on
+mobile devices, but still exhibit important limitations,
+as shown in Table~\ref{tbl:fn-systems}.
+
+Specifically, existing systems fall short in their support for
+cross-platform federated learning on Android and iOS devices.
+FedML~\cite{he2020fedml},
+Microsoft's Project Florida~\cite{madrigal2023project},
+and the FedScale benchmark~\cite{lai2022fedscale} primarily support Android.
+On the other hand,
+Flower \cite{beutel2020flower,mathur2021ondevice} and
+Syft \cite{ryffel2018generic,Ziller2021,hall2021syft}
+provide software development kits for both Android and iOS.
+However, Flower software development kits only provide communication support,
+and do not provide support for on-device training;
+it also provides incompatible communication formats in
+the Android software development kit versus the iOS software development kit,
+so that models from the two platforms cannot be aggregated together.
+Syft only uses CPU for on-device training, and lacks hardware acceleration;
+this is undesirable because on-device training is slow and energy-consuming
+without hardware acceleration.
+Therefore, building a federated learning system for smart campus applications is
+still an open challenge.
+
+\begin{table}\begin{center}\label{tbl:fn-systems}
+    \begin{tabular}{lccccc}
+Functionality         & FedML     & Project Florida   & Flower    & Syft      & \textbf{\fedkit} \\
+\hline
+Android-Only          & \ding{51} & \ding{51} & \ding{51} & \ding{51} & \ding{51}       \\
+iOS-Only              & \ding{55} & \ding{55} & \ding{51} & \ding{51} & \ding{51}       \\
+Cross-Platform Aggregation  & \ding{55} & \ding{55} & \ding{55} & \ding{51} & \ding{51}       \\
+\hline
+Training Acceleration & \ding{51} & \ding{51} & \ding{51} & \ding{55} & \ding{51}       \\
+MLOps                 & \ding{51} & \ding{51} & \ding{55} & \ding{55} & \ding{51}       \\
+Open-Source Backend   & \ding{55} & \ding{55} & \ding{51} & \ding{51} & \ding{51}       \\
+    \end{tabular}
+    \caption{Functionality Comparison Among Federated Learning Systems With
+        Smartphone Support.
+    }
+\end{center}\end{table}
+
+In addition to seamless cross-platform support,
+customizable and continuous deployment in production is crucial.
+While FedML~\cite{he2020fedml} and Project Florida~\cite{madrigal2023project}
+support Machine Learning Operations,
+their proprietary backends limit full customization.
+In contrast, open-source solutions like Flower and Syft enable
+full customization
+but are more suitable for single experiments rather than continuous deployment.
+
+To support \fedcampus' use case, we developed our own custom solution \fedkit,
+a software developed kit designed to enable \textbf{cross-platform}
+federated learning research on Android and iOS devices.
+\fedkit introduces two major contributions:
+
+\begin{enumerate}
+    \item \fedkit provides \textbf{modularized libraries} to convert Python-based models,
+    and train and aggregate them across platforms.
+    These libraries can serve as a foundational resource for
+    on-device FL or even ML systems.
+    \item The FL workflow in \fedkit
+    enables flexible \textbf{Machine Learning Operations} from
+    the backend in production.
+    This innovation encourages other open-source solutions to
+    rival proprietary services in deployment support.
+\end{enumerate}
+
 \section{Federated Analytics}
 
 \section{Healthcare Data Analytics}

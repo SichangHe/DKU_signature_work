@@ -1,16 +1,17 @@
 \section{Data Access}
 
-\paragraph{Ground Truth}
-To preserve user privacy,
-the bottom line is that the raw data must not be collected.
-
 The initial phase of FedCampus operates on participants' health data recorded by
 the Huawei Watch Fit 2.
 100 smartwatches of this model are purchased to be lent to the participants.
 
-In order to conduct research on the data,
-our algorithm needs to access the data from the smartwatch.
+As a ground truth, to preserve user privacy,
+the bottom line is that the raw data must not be collected.
+However, in order to conduct research on the data,
+our algorithms need to access the data from the smartwatch.
 
+To deploy algorithms without collecting raw data,
+we need to deploy the algorithms on users' edge devices and
+access the data there.
 In the natural life cycle of the collected health data,
 the data are first synchronized from the participants' smartwatches to
 the Huawei Health Kit~\cite{huaweihealthkit} on
@@ -50,3 +51,14 @@ only a single codebase is needed to for both the Android and iOS versions of
 the application.
 Therefore, we implement as much of the \fedcampus Application on Flutter as
 possible to maximize our code reuse and minimize our development effort.
+
+\section{Designing \fedkit}
+
+\subsection{On-Device Training}
+
+The FedScale benchmark~\cite{lai2022fedscale} takes an interesting approach to
+run TensorFlow on Android---it uses the Termux Application to
+create a UNIX shell environment.
+
+\subsection{Machine Learning Operations}
+
