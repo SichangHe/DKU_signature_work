@@ -11,6 +11,23 @@ However, most existing federated learning systems~\cite[e.g.,][]{
 which is distinct from our real-world use case.
 These systems cannot be directly leveraged to support our experiments.
 
+\section{Machine Learning Operations}
+
+% TODO: Improve this and cite.
+Machine learning operations (MLOps) is a set of practices similar to
+development operations (DevOps).
+In development operations,
+the software development process and the deployment process are integrated,
+so that new software changes made by the development team can be
+automatically deployed into production.
+Similarly, in machine learning operations,
+changes in the machine learning algorithms can be automatically deployed into
+production.
+Machine learning operations is desirable when the development velocity on
+the machine learning algorithms is high,
+and feedbacks from the production environment are important to improve
+the machine learning algorithms.
+
 \section{Federated Learning on Smartphones}
 
 Several systems have emerged to fulfill the demand for federated learning on
@@ -23,8 +40,8 @@ FedML~\cite{he2020fedml},
 Microsoft's Project Florida~\cite{madrigal2023project},
 and the FedScale benchmark~\cite{lai2022fedscale} primarily support Android.
 On the other hand,
-Flower \cite{beutel2020flower,mathur2021ondevice} and
-Syft \cite{ryffel2018generic,Ziller2021,hall2021syft}
+Flower~\cite{beutel2020flower,mathur2021ondevice} and
+Syft~\cite{ryffel2018generic,Ziller2021,hall2021syft}
 provide software development kits for both Android and iOS.
 However, Flower software development kits only provide communication support,
 and do not provide support for on-device training;
@@ -56,8 +73,7 @@ Open-Source Backend   & \ding{55} & \ding{55} & \ding{51} & \ding{51} & \ding{51
 
 In addition to seamless cross-platform support,
 customizable and continuous deployment in production is crucial.
-While FedML~\cite{he2020fedml} and Project Florida~\cite{madrigal2023project}
-support Machine Learning Operations,
+While FedML and Project Florida support machine learning operations,
 their proprietary backends limit full customization.
 In contrast, open-source solutions like Flower and Syft enable
 full customization
@@ -69,12 +85,12 @@ federated learning research on Android and iOS devices.
 \fedkit introduces two major contributions:
 
 \begin{enumerate}
-    \item \fedkit provides \textbf{modularized libraries} to convert Python-based models,
+\item \fedkit provides \textbf{modularized libraries} to convert Python-based models,
     and train and aggregate them across platforms.
     These libraries can serve as a foundational resource for
     on-device FL or even ML systems.
-    \item The FL workflow in \fedkit
-    enables flexible \textbf{Machine Learning Operations} from
+\item The FL workflow in \fedkit
+    enables flexible \textbf{machine learning operations} from
     the backend in production.
     This innovation encourages other open-source solutions to
     rival proprietary services in deployment support.
