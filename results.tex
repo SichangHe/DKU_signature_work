@@ -40,3 +40,34 @@ it could not read it from Apple HealthKit.
 Due to these practical limitations,
 we first prioritized Huawei smartphone users, then iPhone users,
 for our initial launch.
+
+\section{\fedkit Integration in The \fedcampus Application}
+
+\begin{figure}\begin{center}
+    \label{fig:integration}
+    \includegraphics[width=\linewidth]{fedcampus.pdf}
+    \caption{Experiment Setup for The \fedkit Integration in The FedCampus
+        Application.
+    }
+\end{center}\end{figure}
+
+We integrated \fedkit into the \fedcampus Application to
+conduct a federated learning experiment using health data on the smartphones,
+as displayed in Figure~\ref{fig:integration}.
+In our setup,
+A backend server is hosted in the physical machine in the background,
+while an Android device and an iOS device are running an early version of
+the \fedcampus Application.
+The laptop is connected to the server via Secure Shell (SSH),
+and was displaying the training logs,
+along with the training loss and the model's source code.
+
+The \fedcampus Application in this experiment trained a sleep-efficiency
+prediction model similar to the model described in~\cite{khoa2022fedmcrnn}
+using health data collected from the smartwatches.
+Each round of training is instantaneous on both Android because of
+the small training dataset,
+and both smartphones remained cool with \fedkit's training acceleration.
+The models trained on these smartphones are aggregated across Android and iOS,
+resulting in a significant reduction in the training loss,
+demonstrating \fedkit's effectiveness in real-world scenarios.
