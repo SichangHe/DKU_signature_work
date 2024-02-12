@@ -7,6 +7,45 @@ We call the API from using Kotlin,
 a programming language compatible with Java,
 and aggregate the data into a daily summary.
 % TODO: What are the data types.
+We used Kotlin to integrate with Huawei HealthKit API because
+we found it to be more concise and maintainable than Java while
+having complete interoperability.
+A special pop-up authentication page is also implemented to request the user for
+permissions to access their health data, as required by Huawei.
+
+On iOS, we indirectly access Apple HealthKit through Flutter's Health package.
+The Health package provides a unified interface to access health data,
+and notifies iOS to request permissions from the user to access the health data.
+Since the Health package can also request health data from Google Fit on
+Android, we provide an optional feature to use health data from Google Fit to
+experimentally accommodate participants who use Android smartphones and
+do not use Huawei smartwatches.
+
+In our internal testing, we noticed that accessing the data could be slow,
+especially when requesting data using the Huawei HealthKit API.
+To mitigate this issue, we implemented a local cache database.
+Before we request data from either of the HealthKits,
+we first check the cache database for the data.
+If the data is not in the cache database,
+we request the data from the HealthKit and update the cache database.
+% TODO: Not implemented yet.
+We also implemented a background task to periodically update the cache database,
+and the users can also force an update by refreshing the health page in
+the application.
+
+\section{The \fedcampus Application}
+
+Most of the \fedcampus Application is implemented in Dart using
+the Flutter application framework, with a few exceptions.
+The data access on Android and the federated learning on-device training part
+calls into platform-specific native code under Flutter's mechanism.
+
+We leverage Flutter's strong support for
+building attractive user interface to fulfill the need to
+create a user-friendly application.
+Additional, HTTP request libraries and JSON libraries in Dart are used to
+communicate with the backend,
+and an SQL library is used to manage the cache database.
 
 \section{\fedkit}
 

@@ -26,4 +26,26 @@ On Android, Huawei provides the Huawei HealthKit API to access the data.
 On iOS, Apple restricts third-party access to private data,
 and unifies such access to Apple HealthKit,
 so we have to first synchronize the data from the Huawei HealthKit to
-the Apple HealthKit, then access the data there.
+the Apple HealthKit, then access the data via Apple HealthKit.
+
+\section{The \fedcampus Application}
+
+The major challenge of the \fedcampus Application is to
+support both Android and iOS devices.
+This is necessary because our participants at Duke Kunshan University are
+a mix of Android and iOS users,
+and we want to allow as many of them to participate as possible.
+However, Android and iOS applications are incompatible,
+and developing separate applications for these two platforms would be
+a laborious task because
+it would mean we have to maintain two separate codebases and
+duplicate any changes.
+
+To support mobile development on both Android and iOS,
+we leverage the Flutter application framework.
+Instead of developing two separate applications for Android and iOS,
+by using Flutter,
+only a single codebase is needed to for both the Android and iOS versions of
+the application.
+Therefore, we implement as much of the \fedcampus Application on Flutter as
+possible to maximize our code reuse and minimize our development effort.
