@@ -41,6 +41,38 @@ Due to these practical limitations,
 we first prioritized Huawei smartphone users, then iPhone users,
 for our initial launch.
 
+\section{\fedkit MNIST Demonstration}
+
+We demonstrate federated learning among
+devices running an example Flutter client app,
+and a laptop running a \fedkit Backend.
+First, we demonstrate our seamless \textit{federated learning model pipeline}.
+We convert a TensorFlow MNIST model and
+conduct federated learning with it across an Android and an iOS device.
+Second, to showcase \textit{machine learning model operations},
+we modify the model and deploy its new version.
+As outlined in Table~\ref{tbl:demo-stats},
+our telemetry shows that
+the iOS device is over 5$\times$ faster in local training despite
+having 0.5$\times$ RAM,
+illustrating how \fedkit will provide real-world statistics to
+enhance federated learning algorithm design.
+
+\begin{table}
+    \centering
+    \setlength{\tabcolsep}{4pt}
+\begin{tabular}{llllr}
+% Added info on RAM speed propose replacing GPU(/NPU) with OpenCL and CoreML
+Device      & System on Chip               & Acceleration        & RAM           & Time   \\\hline
+Huawei Nova 9 Pro  & Snapdragon 778G   & OpenCL        & 8GB LPDDR5    & 3.583s \\
+iPhone 13 mini   & A15 Bionic, 4 GPU & CoreML        & 4GB LPDDR4X   & 0.656s \\
+\end{tabular}
+\caption{Configurations of Devices and Average Local Training Time Per Round
+    (Two Local Epochs) in A Previous Demo Run.
+}
+\label{tbl:demo-stats}
+\end{table}
+
 \section{\fedkit Integration in The \fedcampus Application}
 
 \begin{figure}\begin{center}
