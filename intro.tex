@@ -46,9 +46,12 @@ provide software development kits for both Android and iOS.
 However, Flower software development kits only provide communication support,
 and do not provide support for on-device training;
 it also provides incompatible communication formats in
-the Android software development kit versus the iOS software development kit,
+the Android software development kit (encoded in raw bytes)
+% TODO: Cite
+versus the iOS software development kit (encoded in the Pickle format),
 so that models from the two platforms cannot be aggregated together.
-Syft only uses CPU for on-device training, and lacks hardware acceleration;
+Syft employs its custom on-device training implementation,
+which only leverages the CPU, and lacks hardware acceleration;
 this is undesirable because on-device training is slow and energy-consuming
 without hardware acceleration.
 Therefore, building a federated learning system for smart campus applications is
@@ -74,13 +77,18 @@ Open-Source Backend   & \ding{55} & \ding{55} & \ding{51} & \ding{51} & \ding{51
 In addition to seamless cross-platform support,
 customizable and continuous deployment in production is crucial.
 While FedML and Project Florida support machine learning operations,
-their proprietary backends limit full customization.
+their proprietary backend servers limit full customization.
 In contrast, open-source solutions like Flower and Syft enable
 full customization
 but are more suitable for single experiments rather than continuous deployment.
+For \fedcampus' purpose,
+we require both the ability to conduct machine learning operations,
+and to self-host and customize the backend server in production.
 
 To support \fedcampus' use case, we developed our own custom solution \fedkit,
-a software developed kit designed to enable \textbf{cross-platform}
+an open-source software developed kit\footnote{
+    Available at \url{https://github.com/FedCampus/FedKit}.
+} designed to enable \textbf{cross-platform}
 federated learning research on Android and iOS devices.
 \fedkit introduces two major contributions:
 
@@ -88,8 +96,8 @@ federated learning research on Android and iOS devices.
 \item \fedkit provides \textbf{modularized libraries} to convert Python-based models,
     and train and aggregate them across platforms.
     These libraries can serve as a foundational resource for
-    on-device FL or even ML systems.
-\item The FL workflow in \fedkit
+    on-device federated learning or even ML systems.
+\item The federated learning workflow in \fedkit
     enables flexible \textbf{machine learning operations} from
     the backend in production.
     This innovation encourages other open-source solutions to
