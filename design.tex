@@ -105,13 +105,23 @@ our federated learning workflow enables flexible machine learning operations
 from the backend in production,
 as we detail in Sec.~\ref{sec:mlops}.
 The entire procedure tackles the third challenge by
-providing a user-friendly development environment in Python for
-all the tasks related to machine learning model creation and
-algorithm deployment.
+providing a user-friendly development environment in Python. As a result,
+\fedkit allows researchers to accomplish all the tasks related to machine
+learning model creation and algorithm deployment using their familiar Python
+frameworks.
 
 % TODO: Paraphrase the content of this subsection.
 \subsection{Cross-Platform Federated Learning Model Pipeline}
 \label{sec:pipeline}
+
+Although most machine learning researchers are familiar with Python-based
+machine learning frameworks such as PyTorch and TensorFlow,
+machine learning models developed using these frameworks generally do not run on
+smartphones.
+Google and Apple have developed their respective frameworks for machine learning
+tasks on their platforms.
+However, these frameworks have different model format and different runtime,
+and therefore are incompatible with each other.
 
 To enable cross-platform federated learning,
 especially \textit{cross-platform aggregation},
@@ -127,7 +137,8 @@ as shown in Fig.~\ref{fig:pipeline}.
 \end{center}\end{figure}
 
 \subsubsection{Model Conversion}
-To enable model creation in Python,
+To enable creating machine learning models in Python,
+then running them on platform-specific machine learning frameworks,
 we begin by converting models into formats compatible with
 Android (TensorFlow Lite or TFLite) and iOS (Core ML).
 Core ML defines a fixed model structure and provides
@@ -140,8 +151,16 @@ four essential federated learning methods
 and \textsf{restore}).
 
 \subsubsection{Unified Training APIs}
-\fedkit provides \textit{TFLite Trainer} and \textit{Core ML Trainer} to
-train the converted models on Android and iOS devices,
+On-device training is the most challenging part of federated learning on
+smartphones because the libraries involved are complex, experimental,
+poorly documented and lack of community guidance.
+\fedkit simplifies this integration by providing trainers
+that wraps on-device training libraries and
+only expose a small interface required by FL.
+
+Specifically, \fedkit provides \textit{TFLite Trainer}
+and \textit{Core ML Trainer}
+to train the converted models on Android and iOS devices,
 utilizing GPU and NPU acceleration.
 Moreover, both trainers expose unified APIs for
 \textit{retrieving and setting model parameters,
@@ -197,7 +216,7 @@ In production,
 federated learning development faces challenges from
 the lack of direct control over end devices.
 \fedkit empowers researchers to deploy models and algorithms continuously (MLOps).
-Leveraging our complete control of the self-hosted Backend,
+Leveraging our complete control of the self-hosted backend server,
 \fedkit's three-step federated learning workflow
 facilitates continuous delivery and training,
 as illustrated in Fig.~\ref{fig:fl-workflow}.
@@ -216,31 +235,36 @@ resulting in complexities when submitting apps to app stores and garnering user 
 Circumventing this complexity,
 \fedkit enables \textit{continuous model delivery without app updates} by
 decoupling models from clients through \textit{Model Request},
-which allows new model deployment by uploading to the Backend.
-Specifically, clients request the Backend for a model (TFLite/Core ML)
+which allows new model deployment by uploading to the backend server.
+Specifically, clients request the backend server for a model (TFLite/Core ML)
 aligned with
 their platform (Android/iOS) and training data type.
-The Backend selects the appropriate model \model{} from the database and
+The backend server selects the appropriate model \model{} from the database and
 responds with detailed model information.
 Consequently, \textit{Model Request} delivers the TFLite or Core ML model
 to clients for federated learning training.
+This makes real-world mobile FL experiments feasible---instead of constantly
+annoying the users by telling them to update the apps,
+we can trivially iterate on the models without users noticing.
 
 \subsubsection{Customizable Continuous federated learning Training}
-\fedkit manages continuous federated learning training by allowing \textit{multiple parallel federated learning training sessions}
-through federated learning server Setup.
-When clients request an federated learning server to
-train their chosen model \model{},
-the Backend either reuses a suitable federated learning Server \fs{} if it exists,
-or spawns a new one.
-Each federated learning server
-operates as an independent Python subprocess of the Django Backend,
-occupying its own port that
-clients connect to for federated learning Training.
-This dynamic approach ensures that
-newly delivered models can be immediately trained with new federated learning servers
-without affecting ongoing ones.
+\fedkit manages continuous federated learning training by allowing
+\textit{multiple parallel federated learning training sessions}
+through federated learning server Setup. When clients request an federated
+learning server to train their chosen model \model{},
+the backend server either reuses a suitable federated learning Server \fs{}
+if it exists, or spawns a new one.
+Each federated learning server operates as an independent Python subprocess of
+the backend server,
+occupying its own port that clients connect to for federated learning Training.
+This dynamic approach ensures that newly delivered models can be immediately
+trained with new federated learning servers without affecting ongoing ones.
 Furthermore,
-these federated learning servers employ the Flower federated learning Framework for
-scheduling training and evaluation.
-This decision empowers our federated learning servers to leverage Flower's flexibility and
-allow for federated learning algorithm customizations in Python.
+these federated learning servers employ the Flower federated learning
+framework~\cite{beutel2020flower} for scheduling training and evaluation.
+This decision empowers our federated learning servers to leverage Flower's
+flexibility and allow for federated learning algorithm customizations in Python.
+With the power of our custom backend server and the Flower framework,
+we allow researchers to have fine-grained control over the entire federated
+learning process by directly modifying the backend server and the federated
+learning server code in Python.
