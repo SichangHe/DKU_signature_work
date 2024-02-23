@@ -53,82 +53,84 @@ Therefore, we implement as much of the \fedcampus Application on Flutter as
 possible to maximize our code reuse and minimize our development effort.
 
 \section{Designing \fedkit}
+% TODO: %s/TensorFlow Lite/TensorFlow Lite/g
 
-As an overview, \fedkit is a software development kit designed to
-facilitate federated learning among clients running on Android and iOS devices.
-Since smartphone operating systems vendors generally lock down their
-operating systems to only access external software as "applications",
-our clients in this case are the smartphone application.
-To orchestrate and control the federated learning process,
-we also need a backend server to schedule training on the clients and
-manage machine learning model aggregation.
+As an overview,
+\fedkit is a software development kit meticulously crafted to facilitate
+federated learning seamlessly among clients operating on both Android and iOS
+devices. Given the inherent limitations imposed by smartphone operating systems,
+which restrict external software to function solely as "applications," our
+clients, in this context, are the smartphone applications.
+To effectively orchestrate and control the federated learning process,
+a backend server is essential.
+This server handles the scheduling of training on the clients and manages the
+aggregation of machine learning models.
 
 \subsection{Challenges in \fedkit's Design}
 
 The design of \fedkit faces three major challenges:
 
+The design of \fedkit confronts three significant challenges:
+
 \begin{enumerate}
-\item To leverage the potential participant pool at Duke Kunshan University,
+\item Cross-Platform Support:
+    To tap into the potential participant pool at Duke Kunshan University,
     the \fedcampus Application needs to support both Android and iOS devices.
-    This means that any federated learning system we integrate into it
-    also needs to support both Android and iOS devices.
-    However, existing on-device training frameworks for smartphones typically
-    only support either of these two platforms,
-    which means that we have to implement every machine learning models twice
-    and train them separately on Android and iOS,
-    splitting our participants' data and
-    losing part of the point of federated learning.
-\item Typical machine learning examples on smartphones from major frameworks
-    include the machine learning models inside the applications themselves,
-    which couples updating the models with updating the applications.
-    However, application updates possibly need to go through a review process
-    in the vendor's application store, or require users intervention.
-    These processes take the control out of the hands of the \fedcampus team,
-    and pose difficulties in iterating the machine learning model in production.
-\item Integrating any federating learning process into
-    the \fedcampus Application requires both mobile development knowledge
-    for the implementation,
-    and machine learning knowledge for the actual algorithm.
+    This necessitates that any federated learning system integrated into it must
+    also cater to both platforms. However,
+    existing on-device training frameworks for smartphones typically support
+    only one of these platforms. Consequently,
+    we find ourselves compelled to implement machine learning models twice and
+    train them separately on Android and iOS,
+    which leads to the fragmentation of participant data,
+    undermining the essence of federated learning.
+\item Dependency on Application Updates:
+    In conventional examples of machine learning on smartphones from major
+    frameworks,
+    the machine learning models are embedded within the applications,
+    tying model updates to application updates. However,
+    the process of updating applications may involve reviews by the vendor's
+    application store or require user intervention,
+    stripping the \fedcampus team of control and posing challenges in iterating
+    machine learning models in a production setting.
+\item Interdisciplinary Collaboration:
+    Integrating any federated learning process into the \fedcampus Application
+    demands proficiency in both mobile development for implementation and
+    machine learning for the algorithm.
     These intertwined requirements means that the software developer and
     the data scientist on the \fedcampus team have to work very closely for
     any federated-learning-related features and adjustments,
-    resulting in high development overhead.
+    resulting in significant development overhead.
 \end{enumerate}
 
 To address the first challenge,
-we design a cross-platform federated learning model pipeline to
-support the whole federated learning process,
-from model creation, deployment, training, to aggregation,
-which we present in Section~\ref{sec:pipeline}.
-For the second challenge,
-our federated learning workflow enables flexible machine learning operations
-from the backend in production,
-as we detail in Sec.~\ref{sec:mlops}.
-The entire procedure tackles the third challenge by
-providing a user-friendly development environment in Python. As a result,
-\fedkit allows researchers to accomplish all the tasks related to machine
-learning model creation and algorithm deployment using their familiar Python
-frameworks.
+we have devised a cross-platform federated learning model pipeline.
+This comprehensive pipeline supports the entire federated learning process,
+encompassing model creation, deployment, training, and aggregation,
+as detailed in Section~\ref{sec:pipeline}. For the second challenge,
+our federated learning workflow empowers flexible machine learning operations
+from the backend in production, as we detail in Sec.~\ref{sec:mlops}.
+The overall approach addresses the third challenge by providing a user-friendly
+development environment in Python. Consequently,
+\fedkit allows researchers to accomplish all tasks related to machine learning
+model creation and algorithm deployment using their familiar Python frameworks.
 
 % TODO: Paraphrase the content of this subsection.
 \subsection{Cross-Platform Federated Learning Model Pipeline}
 \label{sec:pipeline}
 
-Although most machine learning researchers are familiar with Python-based
-machine learning frameworks such as PyTorch and TensorFlow,
-machine learning models developed using these frameworks generally do not run on
-smartphones.
-Google and Apple have developed their respective frameworks for machine learning
-tasks on their platforms.
-However, these frameworks have different model format and different runtime,
-and therefore are incompatible with each other.
+While many machine learning researchers are well-versed in Python-based
+frameworks like PyTorch and TensorFlow,
+the challenge lies in the fact that models developed using these frameworks
+generally do not run on smartphones.
+Google and Apple have each devised their frameworks for machine learning tasks,
+each with its model format and runtime,
+rendering them incompatible with each other.
 
 To enable cross-platform federated learning,
-especially \textit{cross-platform aggregation},
-we propose a pipeline comprising
-\textit{model conversion} and
-\textit{unified training APIs},
-as shown in Fig.~\ref{fig:pipeline}.
+especially cross-platform aggregation,
+we propose a pipeline comprising model conversion and unified training APIs,
+illustrated in Fig.~\ref{fig:pipeline}.
 
 \begin{figure}\begin{center}
     \includegraphics[width=\linewidth]{model_pipeline.pdf}
@@ -137,67 +139,69 @@ as shown in Fig.~\ref{fig:pipeline}.
 \end{center}\end{figure}
 
 \subsubsection{Model Conversion}
-To enable creating machine learning models in Python,
-then running them on platform-specific machine learning frameworks,
-we begin by converting models into formats compatible with
-Android (TensorFlow Lite or TFLite) and iOS (Core ML).
-Core ML defines a fixed model structure and provides
-the official converter CoreMLTools.
-For TFLite, we standardized a model format, and then
-developed a compliant TensorFlow converter.
-This standardized format includes
-four essential federated learning methods
-(\textsf{train}, \textsf{infer}, \textsf{parameters},
-and \textsf{restore}).
+To create machine learning models in Python and deploy them on platform-specific
+machine learning frameworks,
+we initiate the process by converting models into compatible
+formats---TensorFlow Lite for Android and Core ML for iOS.
+Core ML follows a fixed model structure defined in the ProtoBuf format,
+and provides the official converter CoreMLTools,
+therefore we directly adapt both the model format and the conversion.
+On the contrary,
+TensorFlow Lite allows specifying custom arbitrary functionalities in the model,
+and provides a Python API for model conversion.
+To unify the model format and conversion process,
+we standardized a model format for TensorFlow Lite and developed a compliant
+TensorFlow converter.
+This standardized format includes four essential federated learning methods to
+train the model, perform inference, and extract and update model parameters.
 
 \subsubsection{Unified Training APIs}
-On-device training is the most challenging part of federated learning on
-smartphones because the libraries involved are complex, experimental,
-poorly documented and lack of community guidance.
-\fedkit simplifies this integration by providing trainers
-that wraps on-device training libraries and
-only expose a small interface required by FL.
+On-device training stands out as the most intricate aspect of federated learning
+on smartphones due to the complexity, experimental nature,
+and lack of community guidance in the involved libraries.
+\fedkit simplifies this integration by providing trainers that encapsulate
+on-device training libraries and expose only a minimal interface required by
+federated learning.
 
-Specifically, \fedkit provides \textit{TFLite Trainer}
-and \textit{Core ML Trainer}
-to train the converted models on Android and iOS devices,
-utilizing GPU and NPU acceleration.
-Moreover, both trainers expose unified APIs for
-\textit{retrieving and setting model parameters,
-    model fitting, and evaluation}.
-On Android, these APIs invoke the TFLite interpreter to call
-our \textit{standardized methods} defined in \textit{Model Conversion}.
-However, on iOS, our experimentation revealed that
-Core ML \textit{forbids} directly setting parameters, which could impede federated learning.
-To overcome this constraint,
-we modify the underlying ProtoBuf representations of
-Core ML models.
 Specifically,
-we employ Swift code generated from the relevant ProtoBuf definition files,
-and navigate nested model definitions to access parameters on iOS.
-Consequently, our unified training APIs exhibit comparable functionality on
-both iOS and Android platforms.
+\fedkit offers the TensorFlow Lite Trainer and the Core ML Trainer for training
+the converted models on Android and iOS devices respectively,
+utilizing OpenGL and Core ML acceleration.
+Both trainers expose unified APIs for retrieving and setting model parameters,
+model fitting, and evaluation.
 
-\subsubsection{Cross-Platform Aggregation}
-Aggregation necessitates
-\textit{uniform parameter representations},
-which poses primary challenges in
-retrieving and setting parameters for Core ML and TFLite.
-1)~Core ML permits \textit{only} specific layers to be \textit{updatable} and
-only provides their parameters post-training.
-Thus, to obtain \textit{other layers'} parameters,
-we implemented a solution using ProtoBuf manipulation.
-This approach involves recording layer information
-during \textit{Model Conversion} and
-utilizing it during training.
-2)~The TFLite interpreter only accepts inputs/outputs as maps from
-\textit{names} to \textit{tensors}.
-Therefore, during \textit{Model Conversion},
-we assign index-based names to each parameter layer and
-dynamically generate the concrete methods that accept these arguments.
-During training, we call the methods with these index-based names to
-access parameters.
-Finally, these unified parameters enable seamless cross-platform aggregation.
+While on Android,
+these APIs invoke the TensorFlow Lite interpreter to call our standardized
+methods defined in Model Conversion, on iOS,
+Core ML forbids setting model parameters directly.
+Since updating model parameters is a fundamental operation in federated
+learning,
+This limitation could have rendered federated learning impossible with Core ML.
+Luckily, we were able to find a mostly undocumented workaround.
+We modify the underlying ProtoBuf representations of Core ML models,
+utilizing Swift code generated from relevant ProtoBuf definition files to
+navigate nested model definitions and access parameters on iOS. Consequently,
+our unified training APIs exhibit comparable functionality on both iOS and
+Android platforms.
+
+\subsubsection{Cross-Platform Model Aggregation}
+The model aggregation step in federated learning necessitates uniform parameter
+representations,
+posing primary challenges in retrieving and setting model parameters for Core ML
+and TensorFlow Lite. Firstly,
+Core ML permits only specific layers of the machine learning models to be
+updatable;
+only parameters for these layers can be obtained after each round of training.
+To obtain parameters for other layers,
+we implement a solution using ProtoBuf manipulation,
+involving recording layer information during Model Conversion and utilizing it
+during training. Secondly,
+the TensorFlow Lite interpreter only accepts inputs or outputs to functions as
+maps from names to tensors. During Model Conversion,
+we assign index-based names to each parameter layer and dynamically generate the
+concrete methods that accept these arguments. During training,
+we call the methods with these index-based names to access parameters.
+These unified parameters enable seamless cross-platform model aggregation.
 
 % TODO: Fit this in.
 \subsubsection{On-Device Training}
@@ -212,14 +216,14 @@ create a UNIX shell environment.
 
 \newcommand{\model}{$M$}
 \newcommand{\fs}{$S_\mathrm F$}
-In production,
-federated learning development faces challenges from
-the lack of direct control over end devices.
-\fedkit empowers researchers to deploy models and algorithms continuously (MLOps).
+In a production setting,
+federated learning development encounters challenges stemming from the lack of
+direct control over end devices.
+\fedkit addresses this limitation by empowering researchers to deploy models and
+algorithms continuously, a practice known as machine learning operations.
 Leveraging our complete control of the self-hosted backend server,
-\fedkit's three-step federated learning workflow
-facilitates continuous delivery and training,
-as illustrated in Fig.~\ref{fig:fl-workflow}.
+\fedkit's three-step federated learning workflow facilitates continuous delivery
+and training, as depicted in Fig.~\ref{fig:fl-workflow}.
 
 \begin{figure}\begin{center}
     \includegraphics[width=0.7\linewidth]{fl_workflow.pdf}
@@ -228,43 +232,44 @@ as illustrated in Fig.~\ref{fig:fl-workflow}.
 \end{center}\end{figure}
 
 \subsubsection{Continuous Cross-Platform Model Delivery}
-Traditionally, models for on-device training are \textit{embedded} into client apps.
+Traditionally, models for on-device training are embedded into client apps.
 However, this approach couples model delivery with app updates,
-resulting in complexities when submitting apps to app stores and garnering user adoption.
+resulting in complexities when submitting apps to app stores and garnering user
+adoption.
 
 Circumventing this complexity,
-\fedkit enables \textit{continuous model delivery without app updates} by
-decoupling models from clients through \textit{Model Request},
-which allows new model deployment by uploading to the backend server.
-Specifically, clients request the backend server for a model (TFLite/Core ML)
-aligned with
-their platform (Android/iOS) and training data type.
-The backend server selects the appropriate model \model{} from the database and
-responds with detailed model information.
-Consequently, \textit{Model Request} delivers the TFLite or Core ML model
+\fedkit enables continuous model delivery without app updates by decoupling
+models from clients through Model Request. This mechanism allows new model
+deployment by uploading to the backend server. Specifically,
+clients request the backend server for a TensorFlow Lite or Core ML model
+aligned with their platform (Android or iOS) and training data type.
+The backend server selects the appropriate model \model{}
+from the database and responds with detailed model information. Consequently,
+Model Request delivers the TensorFlow Lite or Core ML model file for \model{}
 to clients for federated learning training.
 This makes real-world mobile FL experiments feasible---instead of constantly
 annoying the users by telling them to update the apps,
 we can trivially iterate on the models without users noticing.
 
 \subsubsection{Customizable Continuous federated learning Training}
-\fedkit manages continuous federated learning training by allowing
-\textit{multiple parallel federated learning training sessions}
-through federated learning server Setup. When clients request an federated
-learning server to train their chosen model \model{},
-the backend server either reuses a suitable federated learning Server \fs{}
-if it exists, or spawns a new one.
+\fedkit manages continuous federated learning training by enabling multiple
+parallel federated learning training sessions through federated learning server
+setup.
+When clients request a federated learning server to train their chosen model
+\model{},
+the backend server either reuses a suitable federated learning server \fs{}
+if it exists or spawns a new one.
 Each federated learning server operates as an independent Python subprocess of
 the backend server,
-occupying its own port that clients connect to for federated learning Training.
+occupying its own port for clients to connect to for federated learning
+training.
 This dynamic approach ensures that newly delivered models can be immediately
 trained with new federated learning servers without affecting ongoing ones.
 Furthermore,
 these federated learning servers employ the Flower federated learning
-framework~\cite{beutel2020flower} for scheduling training and evaluation.
-This decision empowers our federated learning servers to leverage Flower's
-flexibility and allow for federated learning algorithm customizations in Python.
+framework~\cite{beutel2020flower} for scheduling training and evaluation,
+providing flexibility for federated learning algorithm customizations in Python.
 With the power of our custom backend server and the Flower framework,
-we allow researchers to have fine-grained control over the entire federated
-learning process by directly modifying the backend server and the federated
-learning server code in Python.
+researchers can have fine-grained control over the entire federated learning
+process by directly modifying the backend server and the federated learning
+server code in Python.
