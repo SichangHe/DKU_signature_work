@@ -53,7 +53,6 @@ Therefore, we implement as much of the \fedcampus Application on Flutter as
 possible to maximize our code reuse and minimize our development effort.
 
 \section{Designing \fedkit}
-% TODO: %s/TensorFlow Lite/TensorFlow Lite/g
 
 As an overview,
 \fedkit is a software development kit meticulously crafted to facilitate
@@ -115,7 +114,6 @@ development environment in Python. Consequently,
 \fedkit allows researchers to accomplish all tasks related to machine learning
 model creation and algorithm deployment using their familiar Python frameworks.
 
-% TODO: Paraphrase the content of this subsection.
 \subsection{Cross-Platform Federated Learning Model Pipeline}
 \label{sec:pipeline}
 
@@ -210,7 +208,6 @@ The FedScale benchmark~\cite{lai2022fedscale} takes an interesting approach to
 run TensorFlow on Android---it uses the Termux Application to
 create a UNIX shell environment.
 
-% TODO: Paraphrase the content of this subsection.
 \subsection{Machine Learning Operations}
 \label{sec:mlops}
 
@@ -261,7 +258,7 @@ the backend server either reuses a suitable federated learning server \fs{}
 if it exists or spawns a new one.
 Each federated learning server operates as an independent Python subprocess of
 the backend server,
-occupying its own port for clients to connect to for federated learning
+occupying its own port for clients to directly connect to for federated learning
 training.
 This dynamic approach ensures that newly delivered models can be immediately
 trained with new federated learning servers without affecting ongoing ones.
@@ -273,3 +270,9 @@ With the power of our custom backend server and the Flower framework,
 researchers can have fine-grained control over the entire federated learning
 process by directly modifying the backend server and the federated learning
 server code in Python.
+
+Additionally, on every round of training,
+the backend server records the model parameters and telemetry information,
+including timing and loss.
+This additional information proves invaluable for federated learning researchers
+as they can closely observe and analyze the performance of their models.
