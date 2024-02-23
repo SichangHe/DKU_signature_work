@@ -55,9 +55,9 @@ possible to maximize our code reuse and minimize our development effort.
 \section{Designing \fedkit}
 
 As an overview,
-\fedkit is a software development kit meticulously crafted to facilitate
-federated learning seamlessly among clients operating on both Android and iOS
-devices. Given the inherent limitations imposed by smartphone operating systems,
+\fedkit is a software development kit crafted to facilitate federated learning
+seamlessly among clients operating on both Android and iOS devices.
+Given the inherent limitations imposed by smartphone operating systems,
 which restrict external software to function solely as "applications," our
 clients, in this context, are the smartphone applications.
 To effectively orchestrate and control the federated learning process,
@@ -66,8 +66,6 @@ This server handles the scheduling of training on the clients and manages the
 aggregation of machine learning models.
 
 \subsection{Challenges in \fedkit's Design}
-
-The design of \fedkit faces three major challenges:
 
 The design of \fedkit confronts three significant challenges:
 
@@ -263,8 +261,9 @@ training.
 This dynamic approach ensures that newly delivered models can be immediately
 trained with new federated learning servers without affecting ongoing ones.
 Furthermore,
-these federated learning servers employ the Flower federated learning
-framework~\cite{beutel2020flower} for scheduling training and evaluation,
+these full-featured federated learning servers employ the Flower federated
+learning framework~\cite{beutel2020flower}
+for scheduling training and evaluation,
 providing flexibility for federated learning algorithm customizations in Python.
 With the power of our custom backend server and the Flower framework,
 researchers can have fine-grained control over the entire federated learning
