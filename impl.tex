@@ -55,6 +55,8 @@ consists of a single backend server and a set of mobile application clients.
 The clients train their local models on-device with their local data,
 and exchange machine learning models and parameters with the backend server to
 conduct federated learning.
+\fedkit leverages various programming languages and frameworks to achieve its
+functionalities, as visualized in Figure~\ref{fig:stack-viz}.
 
 \begin{table}\begin{center}
     \begin{tabular}{llll}
@@ -72,6 +74,12 @@ Core ML Trainer&Training on iOS&Swift&Core ML
 \fedkit implements 5 libraries, as listed in Table~\ref{table:libs},
 to manage client-server communication and simplify on-device machine learning
 training.
+
+\begin{figure}\begin{center}
+    \includegraphics[width=0.4\linewidth]{stack_visualization.pdf}
+    \caption{\fedkit Technology Stack Visualization.}
+    \label{fig:stack-viz}
+\end{center}\end{figure}
 
 The backend server orchestrates the federated learning process and persists
 relevant information in a database through the object-relational mapping the
