@@ -7,3 +7,31 @@ This means that we do not have control over when and how the data is
 collected or synchronized.
 In the future, it would be desirable to have a more open data access setup,
 where we control the data collection and synchronization process.
+
+Core ML imposes significant restrictions on \fedkit's on-device training on iOS.
+It only supports updating parameters of fully-connected layers and convolutional
+layers, therefore limiting the model types that can be trained.
+Because the Core ML models are defined in a binary format using ProtoBuf,
+and the available loss functions are fixed to be either cross-entropy loss or
+mean squared error loss, the Core ML Trainer is not able to support arbitrary
+loss functions.
+Additionally, we observed a bug in Core ML that causes some models converted
+from TensorFlow using CoreMLTools to crash during training when the model uses
+cross-entropy loss.
+We have reported this issue to Apple.
+
+The proprietary nature of Core ML means that we have little control over its
+functionality span and its problems, therefore,
+one possible future direction is to replace Core ML with a more open solution.
+Microsoft's ONNX Runtime is a promising alternative,
+as it is an actively-developed open-source project and now supports training on
+both iOS and Android.
+However, ONNX Runtime can only leverage the CPU for training on iOS,
+missing our goal of having training acceleration.
+These trade-offs might be acceptable for some applications,
+but ultimately may not be addressable due to Apple's restrictions on access to
+programming interfaces for its hardware.
+
+% TODO: Talk about SSL, etc.
+Security may be extended by implementing Differential Privacy or
+enabling Transport Layer Security.
