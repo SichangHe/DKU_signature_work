@@ -69,19 +69,42 @@ settings~\cite{bonawitz2019towards}.
 
 \section{Communication on Smartphones}
 
-A major challenge in federated learning on smartphones is that the clients train
-the models on user devices, which are not under direct central control.
-To address this challenge, in practice,
-federated learning systems typically incorporate remote procedure calls to
-communicate between clients and the central
+A prevalent challenge in implementing federated learning on smartphones is the
+fact that clients execute model training on user devices,
+which lack direct central control. To overcome this challenge,
+federated learning systems commonly integrate remote procedure calls
+for communication between clients and the central
 server~\cite{tff,he2020fedml,beutel2020flower,patrick2022openfl,madrigal2023project}.
-Via remote procedure calls, the server typically issues commands to the clients,
-instructing them to perform specific tasks,
-such as training or evaluating the model and reporting back model parameters;
-the clients then execute these tasks and report back the results to the server.
-This mechanism gives the developers much flexibility in designing and
-implementing custom scheduling strategies and training algorithms,
-directly on the server.
+Through remote procedure calls, the server issues instructions to clients,
+directing them to execute specific tasks like model training or evaluation,
+and clients report back the results.
+This mechanism provides developers with substantial flexibility in customizing
+scheduling strategies and training algorithms directly on the server.
+
+In practical federated learning implementations,
+the gRPC remote procedure call\footnote{\url{
+    https://grpc.io/
+}.} emerges as the most popular communication protocol.
+Utilized by \cite{tff,patrick2022openfl} for decentralized simulations,
+as well as \cite{beutel2020flower} for its Flower Protocol,
+\cite{madrigal2023project}
+offers users the flexibility to choose between representational state transfer
+and gRPC. The combination of gRPC and protocol buffers (ProtoBuf)\footnote{\url{
+    https://protobuf.dev/
+}.} offers several advantages for communication on mobile devices. ProtoBuf,
+with its compact binary data structure representation,
+enables efficient transmission,
+particularly valuable under the often constrained network conditions of mobile
+devices~\cite{popic2016performance}. Additionally,
+gRPC and ProtoBuf are language-agnostic,
+supporting a variety of programming languages,
+easing their adoption on different platforms~\cite{araujo2020performance}.
+As gRPC is based on HTTP/2,
+it can navigate through restricted firewalls on mobile devices and provides
+guaranteed delivery from TCP~\cite{araujo2020performance}.
+Its connection-based and bidirectional nature allows the server to actively push
+instructions to clients and identify disconnected clients,
+valuable for \fedcampus's use case of federated learning on smartphones.
 
 To perform the model aggregation as in Equation~\ref{eq:aggregation},
 we require that each client report their model parameters in the same layers and
