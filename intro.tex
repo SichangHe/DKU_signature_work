@@ -1,16 +1,57 @@
-\section{Federated Learning}
+\section{Federated Learning And \fedcampus}
 
-Federated learning is a promising technique to collaboratively train
-shared machine learning models on edge devices,
-thereby preserving user privacy and eliminating the need to
-transfer raw data~\cite{mcmahan2017communication}.
+A significant subfield of artificial intelligence,
+machine learning focuses on developing intelligent agents capable of adapting to
+new situations based on historical data. In this adaptive process,
+known as training, an intelligent agent analyzes training data,
+enabling it to make predictions or inferences when confronted with unseen
+situations.
+This involves the construction and training of models—programs implementing
+mathematical functions—by adjusting their parameters.
 
-However, most existing federated learning systems~\cite[e.g.,][]{
-    bonawitz2019towards,ma2019paddlepaddle,liu2021fate,openfl_citation,
-} primarily cater to running simulations on desktop computers or cloud servers,
-which is distinct from our real-world use case.
-These systems cannot be directly leveraged to support our experiments.
+Federated learning, proposed in 2016,
+stands as a notable machine learning technique allowing distributed intelligent
+agents to collaboratively train a model using their local
+data~\cite{mcmahan2017communication,yang2019federated}.
+The main motivation for this approach is to preserve user privacy and eliminate
+the need to transfer raw data. Traditionally,
+training machine learning models typically requires large amounts of centralized
+data,
+leading to mass collection of personal data and therefore privacy invasion.
+% TODO: Cite.
+In contrast,
+federated learning is particularly suitable for scenarios where training data
+cannot be shared centrally due to privacy restrictions.
 
+This introduces the proposal of \fedcampus.
+\fedcampus proposes a privacy-preserving data platform for smart university
+campus built upon techniques including federated learning.
+\fedcampus aims to analyze private data of its participants,
+mainly university students, staff, and faculty,
+without compromising their privacy.
+This task is particularly suitable for federated learning,
+which finds particular relevance in scenarios where the private data of
+individual intelligent agents forms the crux of an machine learning problem.
+For example, early practical applications of federated learning,
+as proposed in~\cite{bonawitz2019towards}, include item selection and ranking,
+personalized content recommendations,
+and next-word prediction for smart keyboards on smartphones.
+These applications leverage private data from user interactions with keyboards,
+highlighting the essential role of federated learning in preserving user privacy
+while enabling collaborative model training.
+
+In contrast to previous federated learning applications,
+\fedcampus is unique in its focus on real-world use cases and openness.
+In the current phase, we conduct experiments on real participants' health data,
+recorded by the smartwatches they wear. However,
+being oriented to real-world use also poses significant challenges.
+While several existing federated learning systems primarily cater to simulations
+on desktop computers or cloud servers,
+they do not directly align with our real-world use case,
+necessitating a unique approach tailored to our
+experiments~\cite[e.g.,][]{bonawitz2019towards,ma2019paddlepaddle,liu2021fate,openfl_citation}.
+
+% TODO: Move to methods.
 \section{Machine Learning Operations}
 
 % TODO: Improve this and cite.
@@ -30,8 +71,17 @@ the machine learning algorithms.
 
 \section{Federated Learning on Smartphones}
 
-Several systems have emerged to fulfill the demand for federated learning on
-mobile devices, but still exhibit important limitations,
+The extensive reach to private data on personal smartphones makes them ideal
+participants in many federated learning applications.
+Recent applications include vision-based product quality
+inspection~\cite{bharti2022edge}
+using an iOS application and short messaging service spam classification on Android
+devices~\cite{sriraman2022device}.
+These examples underscore the diverse range of practical applications that
+leverage federated learning on mobile platforms.
+
+However, while there exist several systems to fulfill the demand for federated learning on
+smartphones, they still exhibit important limitations,
 as shown in Table~\ref{tbl:fn-systems}.
 
 Specifically, existing systems fall short in their support for
