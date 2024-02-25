@@ -106,9 +106,39 @@ Its connection-based and bidirectional nature allows the server to actively push
 instructions to clients and identify disconnected clients,
 valuable for \fedcampus's use case of federated learning on smartphones.
 
+\subsection{On-Device Training Support}
+
+Addressing the imperative of on-device training within federated learning
+systems commonly involves the integration of established mobile machine learning
+frameworks. Notably,
+Google's TensorFlow Lite~\cite{tensorflow2015-whitepaper,abadi2016tensorflow}
+for Android emerges as a prominent choice due to its demonstrated flexibility
+and maturity in facilitating on-device training.
+
+For Android support in Federated-Learning-as-a-Service (FLaaS) frameworks,
+TensorFlow Lite is frequently adopted,
+as evidenced by its incorporation in frameworks
+like~\cite{kourtellis2020flaas,katevas2022flaas}. Moreover,
+TensorFlow Lite serves as a pivotal component in the Android examples provided
+by \cite{mathur2021ondevice}, showcasing its versatile applicability.
+
+In contrast, Apple's Core ML~\cite{coreml} experiences less prevalence,
+primarily attributed to its perceived lack of user-friendliness.
+Although \cite{beutel2020flower} integrates Core ML in its iOS example,
+the broader adoption of Core ML in federated learning frameworks remains
+limited. Instead, Core ML finds more common usage in specific applications,
+such as vision-based quality inspection on iOS~\cite{bharti2022edge}.
+
+However,
+challenges emerge when federated learning applications span both Android and iOS
+devices, particularly when relying on first-party machine learning frameworks.
+TensorFlow Lite and Core ML, being exclusive to their respective platforms,
+generate model parameters in distinct representations.
 To perform the model aggregation as in Equation~\ref{eq:aggregation},
 we require that each client report their model parameters in the same layers and
-in the same order. Rather than changing this requirement,
+in the same order.
+Rather than changing this requirement or develop separate support tailored for
+Android and iOS,
 we treat it as a constraint and design our system to satisfy it in
 Section~\ref{sec:pipeline}.
 
