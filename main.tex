@@ -50,6 +50,9 @@
 \usepackage{pifont}  % for the checkmark/crossmark
 \usepackage{graphicx}
 
+\usepackage{algorithmic}
+\usepackage[ruled]{algorithm2e}
+
 \usepackage{xspace}
 \newcommand{\fedcampus}{\textsc{FedCampus}\xspace}
 \newcommand{\fedkit}{\textsc{FedKit}\xspace}
@@ -223,8 +226,8 @@ and demonstrate the continuity from the previous work to your own.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Design}
-\label{design}
+\chapter{Methods}
+\label{methods}
 
 \instructions{This section is obviously discipline specific so use the
 nomenclature that is common for your discipline. However, this section
@@ -239,6 +242,13 @@ chemical/biological names of all compounds and chemical formulas of
 substances that are new or uncommon. Use standard systematic
 nomenclature to unambiguously define well-established compounds,
 processes, equipment, etc.}
+
+\input{methods}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Design}
+\label{design}
 
 \input{design}
 
