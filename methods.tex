@@ -1,3 +1,7 @@
+To conduct federated learning on smartphones with real-world data,
+we rely on the basics of federated learning, communication on smartphones,
+and machine learning operations.
+
 \section{General Federated Learning Procedure}
 
 \begin{algorithm}
@@ -52,15 +56,22 @@ FedAvg aims to minimize the weighted average of local losses
 \min_{w} \frac{\sum_k |P_k|L(P_k;w)}{\sum_k |P_k|},
 \text{ where }|P_k|\text{ is the size of }P_k,
 \end{equation}
-by computing the weighted average of local models' weights
+by computing the weighted average of local models' parameters
 \begin{equation}
+    \label{eq:aggregation}
 w^{(t+1)}=\sum_k \frac{|P_k|}{\sum_k |P_k|}w_k^{(t+1)}
 \end{equation}
-to update the global model.
+to update the global model, known as model aggregation.
 This iteration is repeated until model convergence or experiment termination.
 FedAvg has proven effective and practical in various experimental scenarios,
 benchmarked against earlier algorithms in data center
 settings~\cite{bonawitz2019towards}.
+
+\section{Communication on Smartphones}
+
+To perform the model aggregation as in Equation~\ref{eq:aggregation},
+we require that each client report their model parameters in the same layers and
+in the same order.
 
 \section{Machine Learning Operations}
 

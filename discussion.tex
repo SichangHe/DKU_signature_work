@@ -35,3 +35,21 @@ programming interfaces for its hardware.
 % TODO: Talk about SSL, etc.
 Security may be extended by implementing Differential Privacy or
 enabling Transport Layer Security.
+
+The inherent heterogeneity of \fedcampus' client devices and data suggests us to
+adopt a more tailored scheduling strategies for federated learning.
+In this scenario, a small number of clients may lag significantly behind others,
+ultimately becoming the bottleneck for the overall training
+process~\cite{chen2020asynchronous,zheng2017asynchronous}.
+Although we have not observed this issue in our experiments,
+likely because of the relatively small number of clients,
+we could employ scheduling strategies tailored for heterogeneous devices.
+These strategies sample clients each round based on their properties,
+and may sample different numbers of clients each
+round~\cite[e.g.,][]{zhang2022fedada,karimireddy2019error,reddi2020adaptive,luo2021cost};
+they may allow clients to train for different numbers of local epochs based on
+their computational capabilities~\cite{li2020federated}; or,
+they may adopt an asynchronous
+approach~\cite{chilimbi2014project,zhu2022online,huba2022papaya,sun2022fedsea}.
+We could adopt some of these existing strategies and compare their performance,
+or even develop new strategies that are more tailored to our specific scenario.
