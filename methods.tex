@@ -7,14 +7,14 @@ and machine learning operations.
 \begin{algorithm}
     \caption{General Federated Learning Procedure}
     \label{algo:general-procedure}
-\ForEach{Training iteration}{
-Distribute the global model to all clients\;
-\ForEach{Client}{
-    Train the local model using local training data\;
-    Send the trained local model back to the central server\;
-}
-The central server aggregates all local models into a new global model\;
-}
+    \ForEach{Training iteration}{
+        Distribute the global model to all clients\;
+        \ForEach{Client}{
+            Train the local model using local training data\;
+            Send the trained local model back to the central server\;
+        }
+        The central server aggregates all local models into a new global model\;
+    }
 \end{algorithm}
 
 The general procedure of federated learning on mobile devices involves a
@@ -32,10 +32,10 @@ and the central server is a remote server on the Internet,
 as depicted in Fig.~\ref{fig:general-fl}.
 
 \begin{figure}\begin{center}
-\includegraphics[width=0.7\textwidth]{general_fl.png}
-    \caption{General Federated Learning Procedure on Smartphones.}
-    \label{fig:general-fl}
-\end{center}\end{figure}
+        \includegraphics[width=0.7\textwidth]{general_fl.png}
+        \caption{General Federated Learning Procedure on Smartphones.}
+        \label{fig:general-fl}
+    \end{center}\end{figure}
 
 The specific implementations of federated learning on mobile devices may vary,
 but they share a common foundation. The FedAvg algorithm,
@@ -46,20 +46,20 @@ iteration.
 The local training aims to minimize the loss $L$ of the model for each client's
 local data partition $P_k (k \in \{1, 2, \dots, K\})$:
 \begin{equation}
-\min_{w_k} L(P_k;w_k),
+    \min_{w_k} L(P_k;w_k),
 \end{equation}
 starting from the parameters $w^{(t)}$ of the latest global model from the
 server, and scheduled for a fixed number of $E$ epochs.
 To optimize the global model for the entire training dataset $\bigcup_k P_k$,
 FedAvg aims to minimize the weighted average of local losses
 \begin{equation}
-\min_{w} \frac{\sum_k |P_k|L(P_k;w)}{\sum_k |P_k|},
-\text{ where }|P_k|\text{ is the size of }P_k,
+    \min_{w} \frac{\sum_k |P_k|L(P_k;w)}{\sum_k |P_k|},
+    \text{ where }|P_k|\text{ is the size of }P_k,
 \end{equation}
 by computing the weighted average of local models' parameters
 \begin{equation}
     \label{eq:aggregation}
-w^{(t+1)}=\sum_k \frac{|P_k|}{\sum_k |P_k|}w_k^{(t+1)}
+    w^{(t+1)}=\sum_k \frac{|P_k|}{\sum_k |P_k|}w_k^{(t+1)}
 \end{equation}
 to update the global model, known as model aggregation.
 This iteration is repeated until model convergence or experiment termination.
@@ -83,15 +83,15 @@ scheduling strategies and training algorithms directly on the server.
 
 In practical federated learning implementations,
 the gRPC remote procedure call\footnote{\url{
-    https://grpc.io/
-}.} emerges as the most popular communication protocol.
-Utilized by \cite{tff,patrick2022openfl} for decentralized simulations,
-as well as \cite{beutel2020flower} for its Flower Protocol,
+        https://grpc.io/
+    }.} emerges as the most popular communication protocol.
+It is utilized by \cite{tff,patrick2022openfl} for decentralized simulations,
+as well as in \cite{beutel2020flower} for its Flower Protocol.
 \cite{madrigal2023project}
 offers users the flexibility to choose between representational state transfer
 and gRPC. The combination of gRPC and protocol buffers (ProtoBuf)\footnote{\url{
-    https://protobuf.dev/
-}.} offers several advantages for communication on mobile devices. ProtoBuf,
+        https://protobuf.dev/
+    }.} offers several advantages for communication on mobile devices. ProtoBuf,
 with its compact binary data structure representation,
 enables efficient transmission,
 particularly valuable under the often constrained network conditions of mobile

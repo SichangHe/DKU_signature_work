@@ -70,34 +70,35 @@ aggregation of machine learning models.
 The design of \fedkit confronts three significant challenges:
 
 \begin{enumerate}
-\item Cross-Platform Support:
-    To tap into the potential participant pool at Duke Kunshan University,
-    the \fedcampus Application needs to support both Android and iOS devices.
-    This necessitates that any federated learning system integrated into it must
-    also cater to both platforms. However,
-    existing on-device training frameworks for smartphones typically support
-    only one of these platforms. Consequently,
-    we find ourselves compelled to implement machine learning models twice and
-    train them separately on Android and iOS,
-    which leads to the fragmentation of participant data,
-    undermining the essence of federated learning.
-\item Dependency on Application Updates:
-    In conventional examples of machine learning on smartphones from major
-    frameworks,
-    the machine learning models are embedded within the applications,
-    tying model updates to application updates. However,
-    the process of updating applications may involve reviews by the vendor's
-    application store or require user intervention,
-    stripping the \fedcampus team of control and posing challenges in iterating
-    machine learning models in a production setting.
-\item Interdisciplinary Collaboration:
-    Integrating any federated learning process into the \fedcampus Application
-    demands proficiency in both mobile development for implementation and
-    machine learning for the algorithm.
-    These intertwined requirements means that the software developer and
-    the data scientist on the \fedcampus team have to work very closely for
-    any federated-learning-related features and adjustments,
-    resulting in significant development overhead.
+    \item Cross-Platform Support:
+          To tap into the potential participant pool at Duke Kunshan University,
+          the \fedcampus Application needs to support both Android and iOS
+          devices.
+          This necessitates that any federated learning system integrated into
+          it must also cater to both platforms. However,
+          existing on-device training frameworks for smartphones typically
+          support only one of these platforms. Consequently,
+          we find ourselves compelled to implement machine learning models twice
+          and train them separately on Android and iOS,
+          which leads to the fragmentation of participant data,
+          undermining the essence of federated learning.
+    \item Dependency on Application Updates:
+          In conventional examples of machine learning on smartphones from major
+          frameworks,
+          the machine learning models are embedded within the applications,
+          tying model updates to application updates. However,
+          the process of updating applications may involve reviews by the
+          vendor's application store or require user intervention,
+          stripping the \fedcampus team of control and posing challenges in
+          iterating machine learning models in a production setting.
+    \item Interdisciplinary Collaboration:
+          Integrating any federated learning process into the \fedcampus
+          Application demands proficiency in both mobile development for
+          implementation and machine learning for the algorithm.
+          These intertwined requirements means that the software developer and
+          the data scientist on the \fedcampus team have to work very closely
+          for any federated-learning-related features and adjustments,
+          resulting in significant development overhead.
 \end{enumerate}
 
 To address the first challenge,
@@ -129,10 +130,10 @@ we propose a pipeline comprising model conversion and unified training APIs,
 illustrated in Fig.~\ref{fig:pipeline}.
 
 \begin{figure}\begin{center}
-    \includegraphics[width=\linewidth]{model_pipeline.pdf}
-    \caption{\fedkit Model Pipeline for Cross-Platform Federated Learning.}
-    \label{fig:pipeline}
-\end{center}\end{figure}
+        \includegraphics[width=\linewidth]{model_pipeline.pdf}
+        \caption{\fedkit Model Pipeline for Cross-Platform Federated Learning.}
+        \label{fig:pipeline}
+    \end{center}\end{figure}
 
 \subsubsection{Model Conversion}
 To create machine learning models in Python and deploy them on platform-specific
@@ -221,10 +222,10 @@ Leveraging our complete control of the self-hosted backend server,
 and training, as depicted in Fig.~\ref{fig:fl-workflow}.
 
 \begin{figure}\begin{center}
-    \includegraphics[width=0.7\linewidth]{fl_workflow.pdf}
-    \caption{\fedkit federated learning Workflow.}
-    \label{fig:fl-workflow}
-\end{center}\end{figure}
+        \includegraphics[width=0.7\linewidth]{fl_workflow.pdf}
+        \caption{\fedkit federated learning Workflow.}
+        \label{fig:fl-workflow}
+    \end{center}\end{figure}
 
 \subsubsection{Continuous Cross-Platform Model Delivery}
 Traditionally, models for on-device training are embedded into client apps.

@@ -59,27 +59,27 @@ conduct federated learning.
 functionalities, as visualized in Figure~\ref{fig:stack-viz}.
 
 \begin{table}\begin{center}
-    \begin{tabular}{llll}
-Library&Functionality&Language&Framework\\\hline
-Backend Server&Training Orchestration \& Telemetry&Python&Django\\
-Flutter Flower Client&Backend \& FL Server Communication&Dart&Flutter\\
-TensorFlow Lite Trainer&Training on Android&Kotlin&TensorFlow Lite\\
-TensorFlow Lite Converter&TensorFlow Models Conversion&Python&TensorFlow\\
-Core ML Trainer&Training on iOS&Swift&Core ML
-    \end{tabular}
-    \caption{Major Libraries in the \fedkit Software Development Kit.}
-\label{table:libs}
-\end{center}\end{table}
+        \begin{tabular}{llll}
+            Library                   & Functionality                       & Language & Framework       \\\hline
+            Backend Server            & Training Orchestration \& Telemetry & Python   & Django          \\
+            Flutter Flower Client     & Backend \& FL Server Communication  & Dart     & Flutter         \\
+            TensorFlow Lite Trainer   & Training on Android                 & Kotlin   & TensorFlow Lite \\
+            TensorFlow Lite Converter & TensorFlow Models Conversion        & Python   & TensorFlow      \\
+            Core ML Trainer           & Training on iOS                     & Swift    & Core ML
+        \end{tabular}
+        \caption{Major Libraries in the \fedkit Software Development Kit.}
+        \label{table:libs}
+    \end{center}\end{table}
 
 \fedkit implements 5 libraries, as listed in Table~\ref{table:libs},
 to manage client-server communication and simplify on-device machine learning
 training.
 
 \begin{figure}\begin{center}
-    \includegraphics[width=0.4\linewidth]{stack_visualization.pdf}
-    \caption{\fedkit Technology Stack Visualization.}
-    \label{fig:stack-viz}
-\end{center}\end{figure}
+        \includegraphics[width=0.4\linewidth]{stack_visualization.pdf}
+        \caption{\fedkit Technology Stack Visualization.}
+        \label{fig:stack-viz}
+    \end{center}\end{figure}
 
 The backend server orchestrates the federated learning process and persists
 relevant information in a database through the object-relational mapping the
