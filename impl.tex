@@ -59,13 +59,13 @@ conduct federated learning.
 functionalities, as visualized in Figure~\ref{fig:stack-viz}.
 
 \begin{table}\begin{center}
-        \begin{tabular}{llll}
-            Library                   & Functionality                       & Language & Framework       \\\hline
+        \begin{tabular}{llll}\toprule
+            Library                   & Functionality                       & Language & Framework       \\\midrule
             Backend Server            & Training Orchestration \& Telemetry & Python   & Django          \\
             Flutter Flower Client     & Backend \& FL Server Communication  & Dart     & Flutter         \\
             TensorFlow Lite Trainer   & Training on Android                 & Kotlin   & TensorFlow Lite \\
             TensorFlow Lite Converter & TensorFlow Models Conversion        & Python   & TensorFlow      \\
-            Core ML Trainer           & Training on iOS                     & Swift    & Core ML
+            Core ML Trainer           & Training on iOS                     & Swift    & Core ML         \\\bottomrule
         \end{tabular}
         \caption{Major Libraries in the \fedkit Software Development Kit.}
         \label{table:libs}
