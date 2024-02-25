@@ -9,7 +9,7 @@ situations.
 This involves the construction and training of models—programs implementing
 mathematical functions—by adjusting their parameters.
 
-Federated learning, proposed in 2016,
+Federated learning
 stands as a notable machine learning technique allowing distributed intelligent
 agents to collaboratively train a model using their local
 data~\cite{mcmahan2017communication,yang2019federated}.
@@ -46,10 +46,10 @@ In the current phase, we conduct experiments on real participants' health data,
 recorded by the smartwatches they wear. However,
 being oriented to real-world use also poses significant challenges.
 While several existing federated learning systems primarily cater to simulations
-on desktop computers or cloud servers,
+on desktop computers or cloud
+servers~\cite[e.g.,][]{bonawitz2019towards,ma2019paddlepaddle,liu2021fate,openfl_citation},
 they do not directly align with our real-world use case,
-necessitating a unique approach tailored to our
-experiments~\cite[e.g.,][]{bonawitz2019towards,ma2019paddlepaddle,liu2021fate,openfl_citation}.
+necessitating a unique approach tailored to our experiments.
 
 % TODO: Move to methods.
 \section{Machine Learning Operations}
@@ -80,8 +80,20 @@ devices~\cite{sriraman2022device}.
 These examples underscore the diverse range of practical applications that
 leverage federated learning on mobile platforms.
 
-However, while there exist several systems to fulfill the demand for federated learning on
-smartphones, they still exhibit important limitations,
+Despite the theoretical advantages of federated learning on smartphones,
+the practical deployment of its applications is still limited.
+The concept of federated learning was introduced as early as
+2016~\cite{mcmahan2017communication},
+and its first effective and widely recognized application was announced in
+2019~\cite{bonawitz2019towards}; however, even in 2023,
+practical federated learning applications on smartphones remain scarce.
+This scarcity can be attributed to multiple challenges that practical federated
+learning encounters, including privacy and security concerns,
+training efficiency and performance issues,
+and heterogeneity problems~\cite{wen2023survey}.
+
+Several systems have emerged to fulfill the demand for federated learning
+on smartphones, but they still exhibit important limitations,
 as shown in Table~\ref{tbl:fn-systems}.
 
 Specifically, existing systems fall short in their support for
@@ -153,7 +165,3 @@ federated learning research on Android and iOS devices.
     This innovation encourages other open-source solutions to
     rival proprietary services in deployment support.
 \end{enumerate}
-
-\section{Federated Analytics}
-
-\section{Healthcare Data Analytics}
