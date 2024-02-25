@@ -53,3 +53,18 @@ they may adopt an asynchronous
 approach~\cite{chilimbi2014project,zhu2022online,huba2022papaya,sun2022fedsea}.
 We could adopt some of these existing strategies and compare their performance,
 or even develop new strategies that are more tailored to our specific scenario.
+
+Another potential optimization is to minimize the data transfer. Currently,
+our system sends all model parameters between the server and the clients each
+round,
+which may be inefficient considering the limited mobile networks smartphones
+operate on.
+Federated learning systems often employ strategies to reduce the amount of data
+transmitted,
+such as transmitting only the difference between the latest local model
+parameters and the last global model\footnote{\url{
+    https://ai.googleblog.com/2017/04/federated-learning-collaborative.html
+}.}, or leveraging sub-networks~\cite{li2021hermes}.
+However,
+the complexity these algorithms introduced on the client side may be undesirably
+challenging.

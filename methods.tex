@@ -69,9 +69,25 @@ settings~\cite{bonawitz2019towards}.
 
 \section{Communication on Smartphones}
 
+A major challenge in federated learning on smartphones is that the clients train
+the models on user devices, which are not under direct central control.
+To address this challenge, in practice,
+federated learning systems typically incorporate remote procedure calls to
+communicate between clients and the central
+server~\cite{tff,he2020fedml,beutel2020flower,patrick2022openfl,madrigal2023project}.
+Via remote procedure calls, the server typically issues commands to the clients,
+instructing them to perform specific tasks,
+such as training or evaluating the model and reporting back model parameters;
+the clients then execute these tasks and report back the results to the server.
+This mechanism gives the developers much flexibility in designing and
+implementing custom scheduling strategies and training algorithms,
+directly on the server.
+
 To perform the model aggregation as in Equation~\ref{eq:aggregation},
 we require that each client report their model parameters in the same layers and
-in the same order.
+in the same order. Rather than changing this requirement,
+we treat it as a constraint and design our system to satisfy it in
+Section~\ref{sec:pipeline}.
 
 \section{Machine Learning Operations}
 
