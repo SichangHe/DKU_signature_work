@@ -1,4 +1,4 @@
-# Establishing FedCampus: A Privacy-Preserving Data Platform for Smart Campus
+# Integrating Federated Learning for FedCampus, A Privacy-Preserving Data Platform for Smart Campuses
 
 ## TODOs
 
