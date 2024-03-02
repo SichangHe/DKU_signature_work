@@ -28,6 +28,7 @@
     - [ ] A 3–5 min video presentation.
 
 [Submission site](https://sakai.duke.edu/portal/site/c02d7bf7-fe29-4fb9-a1ab-ace7b9faf3e6/tool/97116f54-cc95-4e90-82d3-364e9d2f0c71)
+[Box for poster & video](https://duke.app.box.com/folder/250140280298?tc=collab-folder-invite-treatment-b)
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 

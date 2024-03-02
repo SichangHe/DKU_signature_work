@@ -35,7 +35,7 @@
 \setCJKmonofont{Songti SC}
 
 \newcommand{\instructions}[1]{{\color{orange}\itshape #1}}
-% \renewcommand{\instructions}[1]{} % Uncomment this to hide the instructions.
+\renewcommand{\instructions}[1]{} % Uncomment this to hide the instructions.
 
 \usepackage{upquote}
 \usepackage[allcolors=blue,colorlinks=true]{hyperref}
@@ -178,10 +178,9 @@
     appropriate to state grant numbers and sponsors. Examples would like
     SELF, SRS, SW Grants, etc.}
 
-Thanks to DKU Undergraduate Office for their support via
-the Summer Research Scholars Program.
-Special thanks to all \fedcampus team members and alumni for your hard work that
-made this project possible.
+This project is supported by DKU Undergraduate Office via the Summer Research
+Scholars Program. Special thanks to all \fedcampus team members and alumni;
+your hard work made this project possible.
 
 \newpage
 
@@ -351,13 +350,28 @@ made this project possible.
 
 \appendix
 
-\chapter{Additional Material}
-\label{appendix-a}
+\chapter{Federated Analytics}
+\label{app:fa}
 
 \instructions{This template can be viewed on Overleaf at
     \url{https://www.overleaf.com/read/hxjcgtkhjqcd}.  If you have an Overleaf
     account (either free or paid) you can copy this template to start a new
     Overleaf project.  If you do not want an Overleaf account you can install
     TeX on your computer and download the template files from Overleaf.  }
+
+Federated analytics is a decentralized approach that aggregates statistical
+information from multiple sources without compromising individual user data.
+To preserve user privacy,
+the \fedcampus Application employs a privacy-preserving mechanism known as
+differential privacy. Before uploading raw data to our servers,
+Gaussian white noise is added to individual user data.
+This ensures that the aggregated statistics remain robust while preventing the
+identification of specific users.
+
+The decision to utilize differential privacy aligns with our commitment to
+protecting user information. Even with this privacy-preserving measure,
+the group statistics derived from federated analytics retain their significance.
+They provide valuable insights into overall trends and patterns within the
+\fedcampus user community.
 
 \end{document}

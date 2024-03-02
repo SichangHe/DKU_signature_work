@@ -72,10 +72,10 @@ settings~\cite{bonawitz2019towards}.
 A prevalent challenge in implementing federated learning on smartphones is the
 fact that clients execute model training on user devices,
 which lack direct central control. To overcome this challenge,
-federated learning systems commonly integrate remote procedure calls
+federated learning systems commonly integrate remote procedure call
 for communication between clients and the central
 server~\cite{tff,he2020fedml,beutel2020flower,patrick2022openfl,madrigal2023project}.
-Through remote procedure calls, the server issues instructions to clients,
+Through remote procedure call, the server issues instructions to clients,
 directing them to execute specific tasks like model training or evaluation,
 and clients report back the results.
 This mechanism provides developers with substantial flexibility in customizing
@@ -86,7 +86,7 @@ the gRPC remote procedure call\footnote{\url{
         https://grpc.io/
     }.} emerges as the most popular communication protocol.
 It is utilized by \cite{tff,patrick2022openfl} for decentralized simulations,
-as well as in \cite{beutel2020flower} for its Flower Protocol.
+as well as in \cite{beutel2020flower} for its Flower Protocol;
 \cite{madrigal2023project}
 offers users the flexibility to choose between representational state transfer
 and gRPC. The combination of gRPC and protocol buffers (ProtoBuf)\footnote{\url{

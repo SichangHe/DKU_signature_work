@@ -1,4 +1,31 @@
-\section{Participant Requirements}
+\section{The \fedcampus Application}
+
+\begin{figure}\begin{center}
+        \label{fig:fedcampus-app}
+        \includegraphics[width=0.3\linewidth]{fedcampus_screenshot1.jpeg}
+        \includegraphics[width=0.31\linewidth]{fedcampus_screenshot3.png}
+        \includegraphics[width=0.31\linewidth]{fedcampus_screenshot2.jpeg}
+        \caption{Screenshots of The \fedcampus Application.
+            On The left, The User's Personal Health Page on Android;
+            On The Middle, The User's Personal Health Page on iOS in Dark Mode;
+            On The Right,
+            The Group Mean And The User's Approximate Percentile Within The
+            Group From Federated Analytics.
+        }
+    \end{center}\end{figure}
+
+We launched the \fedcampus Application among Duke Kunshan University students,
+faculty, and staff in November 2023.
+At launch,
+the \fedcampus Application displays the users' personal health data accessed,
+as well as some statistics derived from federated analytics (see \ref{app:fa}),
+as shown in Figure~\ref{fig:fedcampus-app}.
+We offered the opportunity to participate in \fedcampus either by lending them
+Huawei smartwatches or by using their own Huawei smartwatches.
+The \fedcampus Application currently has 93 registered users and approximately
+half of them are daily active users.
+
+\subsection{\fedcampus Participant Requirements}
 
 Our involved data access setup results in involved participant requirements.
 
@@ -41,15 +68,36 @@ Due to these practical limitations,
 we first prioritized Huawei smartphone users, then iPhone users,
 for our initial launch.
 
-\section{\fedkit MNIST Demonstration}
+\section{\fedkit Demonstrations}
+
+To demonstrate \fedkit's capabilities,
+we conducted two demonstrations~\cite{he2024fedkit}.
+The first demonstration showcases \fedkit's federated learning model pipeline in
+a lab setting,
+and the second demonstration showcases \fedkit's integration in the \fedcampus
+Application.
+
+\subsection{\fedkit MNIST Demonstration}
+
+\begin{figure}\begin{center}
+        \label{fig:lab}
+        \includegraphics[width=\linewidth]{mnist_demo_photo.jpeg}
+        \caption{A previous \fedkit Demonstration Using A MNIST Model And
+            Running on An Android Phone And An iOS Simulator.
+        }
+    \end{center}\end{figure}
 
 We demonstrate federated learning among
 devices running an example Flutter client app,
 and a laptop running a \fedkit Backend.
-First, we demonstrate our seamless \textit{federated learning model pipeline}.
-We convert a TensorFlow MNIST model and
+Each client has $\frac{1}{10}$ of the MNIST dataset locally,
+which is used to participate in the federated learning process.
+
+First, we demonstrate our seamless federated learning model pipeline.
+We convert a TensorFlow MNIST multi-layer perceptron model and
 conduct federated learning with it across an Android and an iOS device.
-Second, to showcase \textit{machine learning model operations},
+A previous demonstration running this model is shown in Figure~\ref{fig:lab}.
+Second, to showcase machine learning model operations,
 we modify the model and deploy its new version.
 As outlined in Table~\ref{tbl:demo-stats},
 our telemetry shows that
@@ -70,7 +118,7 @@ enhance federated learning algorithm design.
         \label{tbl:demo-stats}
     \end{center}\end{table}
 
-\section{\fedkit Integration in The \fedcampus Application}
+\subsection{\fedkit Integration in The \fedcampus Application}
 
 \begin{figure}\begin{center}
         \label{fig:integration}

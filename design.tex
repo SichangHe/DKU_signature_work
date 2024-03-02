@@ -1,4 +1,11 @@
-\section{Data Access}
+\section{\fedcampus Experiments}
+
+To conduct federated learning experiments on participants' smartphones using
+their health data,
+we developed mechanisms to access the data from smartwatches and a user
+interface to facilitate data access.
+
+\subsection{Data Access}
 
 The initial phase of FedCampus operates on participants' health data recorded by
 the Huawei Watch Fit 2.
@@ -30,7 +37,7 @@ and unifies such access to Apple HealthKit~\cite{applehealthkit},
 so we have to first synchronize the data from the Huawei Health Kit to
 the Apple HealthKit, then access the data via Apple HealthKit.
 
-\section{The \fedcampus Application}
+\subsection{The \fedcampus Application}
 
 The major challenge of the \fedcampus Application is to
 support both Android and iOS devices.
@@ -52,11 +59,12 @@ the application.
 Therefore, we implement as much of the \fedcampus Application on Flutter as
 possible to maximize our code reuse and minimize our development effort.
 
-\section{Designing \fedkit}
+\section{\fedkit}
 
 As an overview,
 \fedkit is a software development kit crafted to facilitate federated learning
-seamlessly among clients operating on both Android and iOS devices.
+seamlessly among clients operating on both Android and iOS
+devices~\cite{he2024fedkit}.
 Given the inherent limitations imposed by smartphone operating systems,
 which restrict external software to function solely as "applications," our
 clients, in this context, are the smartphone applications.
@@ -200,13 +208,6 @@ concrete methods that accept these arguments. During training,
 we call the methods with these index-based names to access parameters.
 These unified parameters enable seamless cross-platform model aggregation.
 
-% TODO: Fit this in.
-\subsubsection{On-Device Training}
-
-The FedScale benchmark~\cite{lai2022fedscale} takes an interesting approach to
-run TensorFlow on Android---it uses the Termux Application to
-create a UNIX shell environment.
-
 \subsection{Machine Learning Operations}
 \label{sec:mlops}
 
@@ -247,7 +248,7 @@ This makes real-world mobile FL experiments feasible---instead of constantly
 annoying the users by telling them to update the apps,
 we can trivially iterate on the models without users noticing.
 
-\subsubsection{Customizable Continuous federated learning Training}
+\subsubsection{Customizable Continuous Federated Learning Training}
 \fedkit manages continuous federated learning training by enabling multiple
 parallel federated learning training sessions through federated learning server
 setup.
