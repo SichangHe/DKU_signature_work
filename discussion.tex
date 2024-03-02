@@ -1,40 +1,47 @@
-Our data access setup is involved and it is desirable to be simplified.
-However, we do not have much control over this process because of
-our overall approach.
-The data are collected by the proprietary Huawei smartwatches,
-and synchronized to the proprietary Huawei Health Kit.
-This means that we do not have control over when and how the data is
-collected or synchronized.
-In the future, it would be desirable to have a more open data access setup,
-where we control the data collection and synchronization process.
+Our data access setup is involved and simplifying it is desirable. However,
+due to our overall approach,
+we have limited control over the data collection and synchronization process.
+The proprietary nature of the Huawei smartwatches and Huawei Health Kit means
+that data collection and synchronization are dictated by the device
+manufacturer. In the future, we aim for a more open data access setup,
+affording us greater control over these crucial processes.
 
-Core ML imposes significant restrictions on \fedkit's on-device training on iOS.
+In the realm of on-device training on iOS using \fedkit,
+Core ML poses notable restrictions.
 It only supports updating parameters of fully-connected layers and convolutional
-layers, therefore limiting the model types that can be trained.
-Because the Core ML models are defined in a binary format using ProtoBuf,
-and the available loss functions are fixed to be either cross-entropy loss or
-mean squared error loss, the Core ML Trainer is not able to support arbitrary
-loss functions.
-Additionally, we observed a bug in Core ML that causes some models converted
-from TensorFlow using CoreMLTools to crash during training when the model uses
-cross-entropy loss.
-We have reported this issue to Apple.
+layers, limiting the range of trainable model types. Furthermore,
+the loss functions available in Core ML models,
+limited to cross-entropy loss or mean squared error loss,
+constrain the flexibility of the Core ML Trainer. We also encountered a bug
+causing crashes during training with models using cross-entropy loss,
+which has been reported to Apple.
 
-The proprietary nature of Core ML means that we have little control over its
-functionality span and its problems, therefore,
-one possible future direction is to replace Core ML with a more open solution.
-Microsoft's ONNX Runtime is a promising alternative,
-as it is an actively-developed open-source project and now supports training on
-both iOS and Android.
-However, ONNX Runtime can only leverage the CPU for training on iOS,
-missing our goal of having training acceleration.
+Considering these challenges, we explore future directions,
+including the potential replacement of Core ML with a more open solution.
+Microsoft's ONNX Runtime~\cite{onnxruntime} emerges as a promising alternative,
+given its active open-source development and support for training on both iOS
+and Android. However, ONNX Runtime can only leverage the CPU for iOS training,
+which might introduce trade-offs in terms of training acceleration.
 These trade-offs might be acceptable for some applications,
 but ultimately may not be addressable due to Apple's restrictions on access to
 programming interfaces for its hardware.
 
-% TODO: Talk about SSL, etc.
-Security may be extended by implementing Differential Privacy or
-enabling Transport Layer Security.
+Security considerations are paramount,
+and we can enhance our system by implementing techniques both on the federated
+learning layer and the communication layer.
+Demonstrated practical attacks against federated learning that reverse engineer
+training data emphasize the need for robust security
+measures~\cite{sun2019really}. To address this,
+federated learning frameworks often implement techniques like homomorphic
+encryption (HE)~\cite{wang2020homo},
+secure multi-party computing (SMC)~\cite{bonawitz2016practical},
+and differential privacy
+(DP)~\cite{dwork2006differential,geyer2017differentially}.
+These mechanisms contribute to bolstering anonymity and mitigating the risk of
+data-driven attacks. On the communication layer,
+we could also enable Transport Layer Security (TLS)
+in our communication protocols including gRPC and HTTP. These measures would
+further enhance the security posture of The \fedcampus Application.
 
 The inherent heterogeneity of \fedcampus' client devices and data suggests us to
 adopt a more tailored scheduling strategies for federated learning.
@@ -54,17 +61,14 @@ approach~\cite{chilimbi2014project,zhu2022online,huba2022papaya,sun2022fedsea}.
 We could adopt some of these existing strategies and compare their performance,
 or even develop new strategies that are more tailored to our specific scenario.
 
-Another potential optimization is to minimize the data transfer. Currently,
-our system sends all model parameters between the server and the clients each
-round,
-which may be inefficient considering the limited mobile networks smartphones
-operate on.
-Federated learning systems often employ strategies to reduce the amount of data
-transmitted,
-such as transmitting only the difference between the latest local model
-parameters and the last global model\footnote{\url{
+Optimizing data transfer is another avenue for improvement. Currently,
+our system sends all model parameters between the server and clients each round,
+potentially leading to inefficiencies over mobile networks.
+Strategies such as transmitting only the difference between local and global
+models\footnote{\url{
         https://ai.googleblog.com/2017/04/federated-learning-collaborative.html
-    }.}, or leveraging sub-networks~\cite{li2021hermes}.
+    }.} or leveraging sub-networks~\cite{li2021hermes}
+    can minimize data transfer.
 However,
 the complexity these algorithms introduced on the client side may be undesirably
 challenging.
