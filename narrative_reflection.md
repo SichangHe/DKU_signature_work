@@ -90,9 +90,24 @@ larger inquiry informing a student’s pathway.
 
 ## Thematic Courses
 
+### COMPSCI 371 - Elements of Machine Learning
+
+<!-- Course description: Fundamental concepts of supervised machine learning,
+with sample algorithms and applications.
+Focuses on how to think about machine learning problems and solutions,
+rather than on a systematic coverage of techniques.
+Serves as an introduction to the methods of machine learning. -->
+
+In COMPSCI 371, I learned the basics of machine learning.
+I understood the fundamentals of neural networks,
+where we iteratively modify models' parameters to optimize for a certain loss
+function.
+I also got a broad view on the approaches to machine learning such as decision
+forest and support vector machines.
+
 ### COMPSCI 311 - Computer Network Architecture
 
-Course description:
+<!-- Course description:
 Introduces students to the fundamentals of computer networks.
 Focus on layered architecture of the network protocol stack.
 Case studies will be drawn from the Internet,
@@ -103,24 +118,33 @@ and wireless/mobile networking and their applications such as how to achieve
 reliable/secure communications over unreliable/insecure channels,
 how to find a good path through a network,
 how to share network resources among competing entities,
-how to find an object in the network, and how to build network applications.
+how to find an object in the network, and how to build network applications. -->
+
+In COMPSCI 311, I learned the basics of computer networks.
+These concepts are essential for understanding the communication between
+smartphones and our backend server.
+The class helped me to understand the technical details of TCP/IP and HTTP,
+on top of which our representational state transfer application programming
+interface (REST API) is built,
+so I could better understand the capabilities and limitations of our
+communication system.
+We also looked at the basics of wireless and mobile networking,
+which is the kind of network connections FedCampus participants have on their
+smartphones.
 
 ### COMPSCI 402 - Artificial Intelligence
 
-Course description:
-This course covers uninformed search, informed search, constraint satisfaction,
-classical planning, neural network, deep learning, hidden Markov model,
-Bayesian network, Markov decision process, reinforcement learning,
-active learning and game theory.
+<!-- Course description: This course covers uninformed search, informed search,
+constraint satisfaction, classical planning, neural network, deep learning,
+hidden Markov model, Bayesian network, Markov decision process,
+reinforcement learning, active learning and game theory. -->
 
-### STATS 302 - Principles of Machine Learning
-
-Course description:
-Fundamental concepts of supervised machine learning,
-with sample algorithms and applications.
-Focuses on how to think about machine learning problems and solutions,
-rather than on a systematic coverage of techniques.
-Serves as an introduction to the methods of machine learning.
+In COMPSCI 402, I developed my understanding in machine learning.
+Through the course,
+I got a feeling that machine learning is about developing machinery that can
+make decisions based on previous data.
+I also used the flexible course project to review literature in the field of
+federated learning on smartphones.
 
 ### Capstone Courses
 
