@@ -85,195 +85,215 @@ in self-designed capstone work and in an e-portfolio system that captures the
 larger inquiry informing a student’s pathway.
 -->
 
-
 # Signature Work Narrative And Experiential Learning Reflection
 
-## Thematic Courses
+Embarking on the intellectual odyssey of my signature work project, FedCampus,
+has been a transformative journey that seamlessly blends academic rigor with
+real-world applications. As I reflect on this profound experience,
+I find myself traversing through three thematic courses that laid the
+theoretical groundwork,
+engaging in experiential learning activities that acted as a crucible for
+practical application,
+and finally converging all these threads in the capstone courses to synthesize
+knowledge and skills.
+This reflection will delve into the intricate details of each phase,
+exploring the profound impact of the thematic courses,
+the immersive experiential learning activities,
+and the culmination of it all in the capstone courses.
 
-### COMPSCI 371 - Elements of Machine Learning
+In the captivating realm of COMPSCI 371,
+the course on Elements of Machine Learning,
+I embarked on an intellectual journey that transcended the conventional
+boundaries of algorithmic understanding. This course served as the keystone,
+unlocking the intricate world of supervised machine learning. Here,
+the canvas of my knowledge expanded,
+absorbing the nuances of sample algorithms and their real-world applications.
+This intellectual expedition delved far beyond the surface,
+encouraging a profound comprehension of the critical thinking processes
+essential in tackling machine learning challenges.
+The course's emphasis on understanding the rationale behind various
+methodologies became the guiding beacon of my exploration,
+fostering a depth of insight that transcends mere technical competence.
 
-Embarking on the journey through COMPSCI 371, the Elements of Machine Learning,
-marked a pivotal moment in my academic exploration.
-This course not only delved into the intricacies of supervised machine learning
-but also meticulously unravelled the core concepts underlying this
-transformative field. As I immersed myself in the curriculum,
-the acquisition of knowledge extended beyond the mere comprehension of
-algorithms;
-it encompassed a profound understanding of the critical thinking required to
-tackle complex machine learning problems.
+Within the labyrinth of COMPSCI 371,
+the exploration of neural networks emerged as an enlightening odyssey.
+Unraveling the iterative modification of model parameters to optimize specific
+loss functions became more than a computational exercise – it became a
+cornerstone of my intellectual foundation. Additionally,
+the exposure to diverse approaches,
+such as decision forests and support vector machines,
+not only broadened my perspective but also catalyzed a holistic understanding of
+the multifaceted landscape of machine learning methodologies.
 
-A highlight of COMPSCI 371 was the in-depth exploration of neural networks.
-This segment not only demystified the complexities of neural architecture but
-also laid the groundwork for my journey into iterative model parameter
-modification.
-Understanding the nuance of optimizing specific loss functions became an
-intellectual cornerstone, enriching my grasp of the underlying principles.
-Moreover, exposure to diverse approaches,
-including decision forests and support vector machines,
-provided a panoramic view of machine learning methodologies,
-fostering a holistic perspective on this dynamic field.
-
-### COMPSCI 311 - Computer Network Architecture
-
-In the landscape of computer networks, COMPSCI 311,
-or Computer Network Architecture, emerged as a keystone in my academic odyssey.
-This course acted as a beacon,
-illuminating the layered architecture of network protocol stacks.
+Navigating the intricate landscape of computer networks unfolded through the
+lens of COMPSCI 311, aptly named Computer Network Architecture. This course,
+with its layered exploration of network protocol stack architecture,
+became a pivotal compass guiding my understanding of the interconnected digital
+world.
 Practical programming exercises and insightful case studies drawn from the vast
-expanse of the Internet augmented my comprehension of network concepts.
+expanse of the Internet enriched my comprehension of network concepts.
 
-The profound relevance of COMPSCI 311 to the FedCampus project cannot be
-overstated.
-The detailed exploration of TCP/IP and HTTP in the course laid the groundwork
-for understanding the intricate communication between smartphones and our
-backend server.
-This comprehension became indispensable in the context of our Representational
-State Transfer (REST) API. Additionally,
-the course's exploration of wireless and mobile networking directly correlated
-with the network connections prevalent in smartphones,
-proving instrumental in the conceptualization and execution of the FedCampus
-initiative.
+The reverberations of COMPSCI 311 echoed profoundly in the context of my
+signature work,
+FedCampus. The in-depth exploration of TCP/IP and HTTP laid a robust foundation
+for deciphering the intricate dance of communication between smartphones and our
+backend server. This knowledge, a direct outcome of the course,
+assumed paramount importance in understanding and optimizing the
+representational state transfer application programming interface (REST API)
+– a critical component of the FedCampus project.
+The course's exploration of wireless and mobile networking served as a prescient
+foreshadowing,
+aligning seamlessly with the network connections prevalent in smartphones,
+an indispensable element of the FedCampus ecosystem.
 
-### COMPSCI 402 - Artificial Intelligence
-
-In the intellectual realm of Artificial Intelligence,
-COMPSCI 402 emerged as a crucible of knowledge,
-refining my insights into machine learning. As the course unfolded,
-it encompassed a spectrum of topics,
-ranging from uninformed and informed search strategies to the intricate world of
-neural networks and game theory.
-The comprehensive overview provided me with a nuanced understanding of the
-decision-making processes inherent in machine learning,
-emphasizing the strategic importance of leveraging historical data.
-
-The flexibility afforded by COMPSCI 402 allowed me to delve into the literature
-on federated learning,
-a pivotal exploration that set the stage for my involvement in the FedCampus
-project.
-This deep dive into federated learning on smartphones became a valuable
-precursor to my subsequent work,
-laying the foundation for the development of innovative solutions that would
-redefine the landscape of collaborative machine learning applications.
-
-### Capstone Courses
-
-The culmination of my academic journey unfolded in the capstone courses,
-where the theoretical knowledge amassed from thematic courses converged into a
-comprehensive and impactful project.
-This amalgamation of expertise resulted in a demonstration paper accepted by the
-esteemed 2024 IEEE Conference on Computer Communications Workshops. The capstone
-courses provided not just a platform but a crucible to synthesize theoretical
-knowledge, practical skills,
-and visionary ideas into a tangible manifestation of intellectual prowess.
-
-Collaborating synergistically with the FedCampus team,
-we propelled the FedCampus Application into the digital realm in December 2023.
-This real-world application of federated learning stood as a testament to the
-interdisciplinary collaboration fostered by DKU's guiding principles.
-It showcased not only collaborative problem-solving but also exemplified rooted
-globalism and the seamless integration of knowledge across diverse academic
-domains.
-
-<!-- TODO: Next part. -->
-
-## Experiential Learning Activities
-
-### Summer Research Scholar Program
-
-As a participant in the summer research scholar program with Professor Bing Luo,
-I immersed myself in the FedCampus project.
-This experiential learning opportunity proved instrumental in bridging academic
-preparation with practical applications.
-The collaboration with Flower Labs member Daniel Nata Nugraha from Germany and
-researcher Dr. Xiaomin Ouyang at the University of California, Los Angeles,
-exemplified rooted globalism.
-Our collective efforts transcended geographical boundaries,
-emphasizing the interconnectedness of the global research community.
-
-### Research Assistant Role
-
-Continuing as a research assistant,
-I assumed a leadership role in developing The FedCampus Application. This
-experience aligned seamlessly with DKU's animating principles,
-particularly collaborative problem-solving. The recruitment of team members,
-including a user interface developer and designer,
-epitomized the interdisciplinary structure of DKU's educational model.
-The collective goal was to create a practical application of federated learning,
-incorporating diverse viewpoints and skill sets.
-
-### Contribution to Flower Federated Learning Framework
-
-Our work extended beyond the confines of our immediate project.
-Contributions upstream to the Flower federated learning framework underscored
-the principles of wise leadership and purposeful life.
-By enhancing the capabilities of the broader research community,
-our work assumed a meaningful and community-driven dimension.
-
-## DEAL Model Analysis
-
-### Describe Experience
-
-The experiential learning activities were multifaceted,
-ranging from collaborative research with international partners to hands-on
-development of a real-world application.
-The summer research scholar program provided an immersive experience in the
+The intellectual odyssey continued with COMPSCI 402,
+an exploration into the captivating realm of Artificial Intelligence. Here,
+the boundaries of machine learning expanded,
+covering an extensive spectrum of topics – from uninformed and informed search
+to the intricacies of neural networks and the strategic maneuvers of game
+theory.
+This comprehensive overview not only deepened my insights but also unveiled the
+decision-making processes embedded in the very fabric of machine learning.
+The flexibility afforded by the course project became a gateway to a deeper
+exploration, leading me down the corridors of federated learning on smartphones.
+This expedition laid the groundwork for my subsequent involvement in the
 FedCampus project,
-offering insights into the global landscape of federated learning.
+becoming the crucible where innovative solutions took shape and ideas
+metamorphosed into action.
+
+The culmination of my thematic explorations found its zenith in the capstone
+courses,
+where the disparate threads of knowledge woven in the thematic courses converged
+into a tapestry of innovation.
+These capstone courses served as the alchemical crucible,
+where theory and practice, knowledge and skills,
+seamlessly melded to birth a project of profound impact.
+The tangible outcome of this amalgamation materialized in a demonstration paper
+accepted by the esteemed 2024 IEEE Conference on Computer Communications
+Workshops. This academic accolade underscored the transformative power of
+synthesizing theoretical knowledge, practical skills, and visionary ideas.
+Collaborating harmoniously with the FedCampus team,
+we transformed concepts into reality,
+birthing The FedCampus Application in December 2023.
+
+This real-world application became more than just a testament to our technical
+prowess; it became a living embodiment of DKU's animating principles.
+Rooted globalism found expression in the collaborative problem-solving inherent
+in our interdisciplinary approach.
+The application served as a testament to the integration of knowledge across
+diverse fields,
+illustrating how academic proficiency transcends silos and converges into
+innovative solutions.
+
+The experiential learning journey commenced with my immersive participation in
+the Summer Research Scholar Program,
+collaborating with Professor Bing Luo on the FedCampus project.
+This pivotal experience served as a transformative bridge,
+seamlessly connecting the theoretical foundations of academic preparation with
+the nuanced intricacies of real-world applications.
+Working alongside international collaborators,
+such as Flower Labs member Daniel Nata Nugraha from Germany and researcher Dr.
+Xiaomin Ouyang at the University of California, Los Angeles,
+exemplified the ethos of rooted globalism.
+The collaborative efforts not only transcended geographical boundaries but also
+underscored the interconnectedness of the global research community.
+
+Transitioning seamlessly into the role of a research assistant marked a
+significant milestone,
+where I assumed a leadership position in the development of The FedCampus
+Application. This hands-on experience intricately aligned with DKU's animating
+principles, especially those of collaborative problem-solving.
+The process of recruiting a diverse team,
+including a skilled user interface developer and designer,
+mirrored the interdisciplinary structure inherent in DKU's educational model.
+Our collective endeavor aimed to create a practical application of federated
+learning,
+harmonizing diverse viewpoints and skill sets—a tangible manifestation of DKU's
+commitment to collaborative problem-solving.
+
+Beyond the immediate project,
+our contributions upstream to the Flower federated learning framework reflected
+the principles of wise leadership and a purposeful life.
+By enhancing the capabilities of the broader research community,
+our work assumed a meaningful and community-driven dimension,
+echoing DKU's animating principles.
+
+The multifaceted experiential learning activities,
+ranging from collaborative research with international partners to the hands-on
+development of a real-world application,
+profoundly enriched my academic journey.
+The Summer Research Scholar Program provided an immersive experience within the
+FedCampus project,
+offering invaluable insights into the global landscape of federated learning.
 As a research assistant,
-I actively participated in the development lifecycle of The FedCampus
-Application, from conceptualization to deployment.
+active participation in the entire development lifecycle of The FedCampus
+Application, from conceptualization to deployment,
+further solidified my experiential learning.
 
-### Examine Acquired Skills
+These experiences collectively enhanced a spectrum of skills,
+ranging from technical expertise in machine learning, networking,
+and software development to interdisciplinary collaboration and leadership.
+Technical skills were honed through the practical implementation of FedKit and
+The FedCampus Application. Simultaneously,
+interdisciplinary collaboration became second nature as we engaged with
+individuals from diverse backgrounds,
+contributing to the ideals of rooted globalism and collaborative
+problem-solving.
+Leadership skills were cultivated through decision-making processes,
+task prioritization, and seamless team coordination,
+aligning seamlessly with DKU's emphasis on wise leadership.
 
-The experiences enhanced a spectrum of skills, encompassing technical expertise,
-interdisciplinary collaboration, and leadership.
-Technical skills in machine learning, networking,
-and software development were honed through the implementation of FedKit and The
-FedCampus Application. Interdisciplinary collaboration became second nature as
-we worked with individuals from diverse backgrounds,
-contributing to rooted globalism and collaborative problem-solving.
-Leadership skills were cultivated through decision-making, task prioritization,
-and team coordination, aligning with DKU's emphasis on wise leadership.
+The significant contribution of experiential learning activities to my signature
+work became increasingly evident in the synthesis of theoretical concepts into
+practical applications, all while maintaining a global perspective.
+The research scholar program laid the essential groundwork for the development
+of the FedKit software development kits,
+acting as a crucial bridge between theoretical knowledge and real-world
+applications. Subsequently,
+the development of The FedCampus Application epitomized the intricate
+intersection between academic preparation and experiential learning,
+providing a tangible and impactful application of federated learning principles.
 
-### Articulate Contribution to Signature Work
+As I reflect on the entire signature work experience,
+it emerges as a transformative journey marked by exploration, collaboration,
+and profound skill development.
+Thematic courses laid the theoretical foundations,
+while capstone courses provided the critical platform to synthesize this
+knowledge.
+Experiential learning activities served as the crucible for translating
+theoretical concepts into practical applications,
+all while maintaining a global perspective—a testament to DKU's commitment to
+fostering well-rounded individuals.
 
-The experiential learning activities significantly contributed to my signature
-work.
-The research scholar program laid the groundwork for the FedKit software
-development kits, bridging theory and practice.
-The development of The FedCampus Application epitomized the intersection between
-academic preparation and experiential learning,
-providing a tangible application of federated learning principles.
+The FedCampus project, in particular,
+vividly embodies DKU's animating principles.
+Rooted globalism becomes palpable in our collaborations with international
+partners,
+where diverse perspectives converged to create something truly innovative.
+Collaborative problem-solving materialized in the interdisciplinary development
+of The FedCampus Application,
+showcasing how a diversity of skill sets can coalesce into a harmonious and
+effective whole.
+Wise leadership was a guiding force in the decision-making processes and
+seamless team coordination,
+and the purposeful life principle was evident in our contributions that extended
+beyond the immediate project, enhancing the broader research community.
 
-## Reflection on Signature Work Experience
-
-The entire signature work experience has been transformative,
-encapsulating a journey of exploration, collaboration, and skill development.
-The thematic courses laid the theoretical foundation,
-and the capstone courses provided the platform to synthesize this knowledge.
-Experiential learning activities were instrumental in translating theoretical
-concepts into practical applications, with a global perspective.
-
-The FedCampus project epitomizes DKU's animating principles.
-Rooted globalism was evident in collaborations with international partners,
-collaborative problem-solving manifested in the interdisciplinary development of
-The FedCampus Application,
-and wise leadership guided decision-making and coordination.
-The purposeful life principle was reflected in contributions to the broader
-research community.
-
-Looking forward,
-this signature work experience has prepared me for future goals.
-The technical skills acquired,
-coupled with interdisciplinary collaboration and leadership experience,
-form a robust foundation.
-The challenges encountered have fostered resilience and adaptability,
-essential traits for navigating the dynamic landscape of technology and
-research.
+As I look ahead,
+it becomes abundantly clear that this signature work experience has
+unequivocally equipped me for future goals. The technical skills acquired,
+coupled with the invaluable experience of interdisciplinary collaboration and
+leadership, collectively form an exceptionally robust foundation.
+The challenges encountered throughout this journey have fostered not just
+knowledge but resilience and adaptability—essential traits for navigating the
+dynamic landscape of technology and research.
 
 In conclusion,
 the signature work experience at DKU has been a holistic and enriching journey,
 seamlessly blending academic rigor with real-world applications.
-It serves as a testament to the efficacy of DKU's educational model and its
-commitment to nurturing well-rounded individuals prepared for the complexities
-of the global landscape.
+It stands as a testament to the efficacy of DKU's educational model and its
+unwavering commitment to nurturing well-rounded individuals prepared for the
+complexities of the global landscape.
+This transformative journey has not only fortified my academic and professional
+repertoire but has also instilled in me a profound sense of purpose and a
+readiness to embrace the challenges and opportunities that lie ahead.
