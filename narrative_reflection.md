@@ -92,102 +92,188 @@ larger inquiry informing a student’s pathway.
 
 ### COMPSCI 371 - Elements of Machine Learning
 
-<!-- Course description: Fundamental concepts of supervised machine learning,
-with sample algorithms and applications.
-Focuses on how to think about machine learning problems and solutions,
-rather than on a systematic coverage of techniques.
-Serves as an introduction to the methods of machine learning. -->
+Embarking on the journey through COMPSCI 371, the Elements of Machine Learning,
+marked a pivotal moment in my academic exploration.
+This course not only delved into the intricacies of supervised machine learning
+but also meticulously unravelled the core concepts underlying this
+transformative field. As I immersed myself in the curriculum,
+the acquisition of knowledge extended beyond the mere comprehension of
+algorithms;
+it encompassed a profound understanding of the critical thinking required to
+tackle complex machine learning problems.
 
-In COMPSCI 371, I learned the basics of machine learning.
-I understood the fundamentals of neural networks,
-where we iteratively modify models' parameters to optimize for a certain loss
-function.
-I also got a broad view on the approaches to machine learning such as decision
-forest and support vector machines.
+A highlight of COMPSCI 371 was the in-depth exploration of neural networks.
+This segment not only demystified the complexities of neural architecture but
+also laid the groundwork for my journey into iterative model parameter
+modification.
+Understanding the nuance of optimizing specific loss functions became an
+intellectual cornerstone, enriching my grasp of the underlying principles.
+Moreover, exposure to diverse approaches,
+including decision forests and support vector machines,
+provided a panoramic view of machine learning methodologies,
+fostering a holistic perspective on this dynamic field.
 
 ### COMPSCI 311 - Computer Network Architecture
 
-<!-- Course description:
-Introduces students to the fundamentals of computer networks.
-Focus on layered architecture of the network protocol stack.
-Case studies will be drawn from the Internet,
-combined with practical programming exercises.
-Concepts include the Internet architecture, HTTP, DNS, P2P, Sockets, TCP/IP,
-BGP, routing protocols,
-and wireless/mobile networking and their applications such as how to achieve
-reliable/secure communications over unreliable/insecure channels,
-how to find a good path through a network,
-how to share network resources among competing entities,
-how to find an object in the network, and how to build network applications. -->
+In the landscape of computer networks, COMPSCI 311,
+or Computer Network Architecture, emerged as a keystone in my academic odyssey.
+This course acted as a beacon,
+illuminating the layered architecture of network protocol stacks.
+Practical programming exercises and insightful case studies drawn from the vast
+expanse of the Internet augmented my comprehension of network concepts.
 
-In COMPSCI 311, I learned the basics of computer networks.
-These concepts are essential for understanding the communication between
-smartphones and our backend server.
-The class helped me to understand the technical details of TCP/IP and HTTP,
-on top of which our representational state transfer application programming
-interface (REST API) is built,
-so I could better understand the capabilities and limitations of our
-communication system.
-We also looked at the basics of wireless and mobile networking,
-which is the kind of network connections FedCampus participants have on their
-smartphones.
+The profound relevance of COMPSCI 311 to the FedCampus project cannot be
+overstated.
+The detailed exploration of TCP/IP and HTTP in the course laid the groundwork
+for understanding the intricate communication between smartphones and our
+backend server.
+This comprehension became indispensable in the context of our Representational
+State Transfer (REST) API. Additionally,
+the course's exploration of wireless and mobile networking directly correlated
+with the network connections prevalent in smartphones,
+proving instrumental in the conceptualization and execution of the FedCampus
+initiative.
 
 ### COMPSCI 402 - Artificial Intelligence
 
-<!-- Course description: This course covers uninformed search, informed search,
-constraint satisfaction, classical planning, neural network, deep learning,
-hidden Markov model, Bayesian network, Markov decision process,
-reinforcement learning, active learning and game theory. -->
+In the intellectual realm of Artificial Intelligence,
+COMPSCI 402 emerged as a crucible of knowledge,
+refining my insights into machine learning. As the course unfolded,
+it encompassed a spectrum of topics,
+ranging from uninformed and informed search strategies to the intricate world of
+neural networks and game theory.
+The comprehensive overview provided me with a nuanced understanding of the
+decision-making processes inherent in machine learning,
+emphasizing the strategic importance of leveraging historical data.
 
-In COMPSCI 402, I developed my understanding in machine learning.
-Through the course,
-I got a feeling that machine learning is about developing machinery that can
-make decisions based on previous data.
-I also used the flexible course project to review literature in the field of
-federated learning on smartphones.
+The flexibility afforded by COMPSCI 402 allowed me to delve into the literature
+on federated learning,
+a pivotal exploration that set the stage for my involvement in the FedCampus
+project.
+This deep dive into federated learning on smartphones became a valuable
+precursor to my subsequent work,
+laying the foundation for the development of innovative solutions that would
+redefine the landscape of collaborative machine learning applications.
 
 ### Capstone Courses
 
-I collected our work and wrote a demonstration paper during the capstone course
-period.
-The demonstration paper is recently accepted by the 2024 IEEE Conference on
-Computer Communications Workshops.
+The culmination of my academic journey unfolded in the capstone courses,
+where the theoretical knowledge amassed from thematic courses converged into a
+comprehensive and impactful project.
+This amalgamation of expertise resulted in a demonstration paper accepted by the
+esteemed 2024 IEEE Conference on Computer Communications Workshops. The capstone
+courses provided not just a platform but a crucible to synthesize theoretical
+knowledge, practical skills,
+and visionary ideas into a tangible manifestation of intellectual prowess.
 
-Additionally,
-I worked closely with the FedCampus team to develop The FedCampus Application,
-and we launched it in December 2023.
+Collaborating synergistically with the FedCampus team,
+we propelled the FedCampus Application into the digital realm in December 2023.
+This real-world application of federated learning stood as a testament to the
+interdisciplinary collaboration fostered by DKU's guiding principles.
+It showcased not only collaborative problem-solving but also exemplified rooted
+globalism and the seamless integration of knowledge across diverse academic
+domains.
+
+<!-- TODO: Next part. -->
 
 ## Experiential Learning Activities
 
-I did a summer research scholar program with Professor Bing Luo,
-working on the FedCampus project.
-I continued working as a research assistant and led the development of The
-FedCampus Application in this research project.
+### Summer Research Scholar Program
 
-The experience closely aligns with DKU's 7 animating principles.
-While researching for FedKit,
-the software development kits for federated learning across smartphones,
-we collaborated with Flower Labs member Daniel Nata Nugraha from Germany,
-researcher Dr. Xiaomin Ouyang at University of California, Los Angeles,
-showing our rooted globalism. To build The FedCampus App,
-I recruited Luyao Wang as a user interface developer,
-and Renyuan Zhang as a user interface designer;
-we worked closely to develop the application,
-showcasing collaborative problem-solving.
-The FedCampus Application is a practical application of federated learning,
-representing research and practice. As we were developing the application,
-we had many diverse opinions and ideas,
-and we had to communicate effectively to make decisions,
-which demonstrates lucid communication. During the development of FedKit,
-we came up with the idea that we could deploy new machine learning models solely
-from the backend server if we always let the client download the latest model;
-we also came up with the idea of aggregating machine learning models in
-different formats by aligning their parameters;
-this demonstrates independence and creativity. As the team leader of FedCampus,
-I had to make decisions on each member's priorities and tasks,
-and bridge the gap among teammates and between the team and the our advisor;
-this requires wise leadership.
-Our work was also contributed upstream to the Flower federated learning
-framework, helping other federated learning projects and researchers,
-showing that the work is meaningful and contributes to the community,
-and aligning with the principle of a purposeful life.
+As a participant in the summer research scholar program with Professor Bing Luo,
+I immersed myself in the FedCampus project.
+This experiential learning opportunity proved instrumental in bridging academic
+preparation with practical applications.
+The collaboration with Flower Labs member Daniel Nata Nugraha from Germany and
+researcher Dr. Xiaomin Ouyang at the University of California, Los Angeles,
+exemplified rooted globalism.
+Our collective efforts transcended geographical boundaries,
+emphasizing the interconnectedness of the global research community.
+
+### Research Assistant Role
+
+Continuing as a research assistant,
+I assumed a leadership role in developing The FedCampus Application. This
+experience aligned seamlessly with DKU's animating principles,
+particularly collaborative problem-solving. The recruitment of team members,
+including a user interface developer and designer,
+epitomized the interdisciplinary structure of DKU's educational model.
+The collective goal was to create a practical application of federated learning,
+incorporating diverse viewpoints and skill sets.
+
+### Contribution to Flower Federated Learning Framework
+
+Our work extended beyond the confines of our immediate project.
+Contributions upstream to the Flower federated learning framework underscored
+the principles of wise leadership and purposeful life.
+By enhancing the capabilities of the broader research community,
+our work assumed a meaningful and community-driven dimension.
+
+## DEAL Model Analysis
+
+### Describe Experience
+
+The experiential learning activities were multifaceted,
+ranging from collaborative research with international partners to hands-on
+development of a real-world application.
+The summer research scholar program provided an immersive experience in the
+FedCampus project,
+offering insights into the global landscape of federated learning.
+As a research assistant,
+I actively participated in the development lifecycle of The FedCampus
+Application, from conceptualization to deployment.
+
+### Examine Acquired Skills
+
+The experiences enhanced a spectrum of skills, encompassing technical expertise,
+interdisciplinary collaboration, and leadership.
+Technical skills in machine learning, networking,
+and software development were honed through the implementation of FedKit and The
+FedCampus Application. Interdisciplinary collaboration became second nature as
+we worked with individuals from diverse backgrounds,
+contributing to rooted globalism and collaborative problem-solving.
+Leadership skills were cultivated through decision-making, task prioritization,
+and team coordination, aligning with DKU's emphasis on wise leadership.
+
+### Articulate Contribution to Signature Work
+
+The experiential learning activities significantly contributed to my signature
+work.
+The research scholar program laid the groundwork for the FedKit software
+development kits, bridging theory and practice.
+The development of The FedCampus Application epitomized the intersection between
+academic preparation and experiential learning,
+providing a tangible application of federated learning principles.
+
+## Reflection on Signature Work Experience
+
+The entire signature work experience has been transformative,
+encapsulating a journey of exploration, collaboration, and skill development.
+The thematic courses laid the theoretical foundation,
+and the capstone courses provided the platform to synthesize this knowledge.
+Experiential learning activities were instrumental in translating theoretical
+concepts into practical applications, with a global perspective.
+
+The FedCampus project epitomizes DKU's animating principles.
+Rooted globalism was evident in collaborations with international partners,
+collaborative problem-solving manifested in the interdisciplinary development of
+The FedCampus Application,
+and wise leadership guided decision-making and coordination.
+The purposeful life principle was reflected in contributions to the broader
+research community.
+
+Looking forward,
+this signature work experience has prepared me for future goals.
+The technical skills acquired,
+coupled with interdisciplinary collaboration and leadership experience,
+form a robust foundation.
+The challenges encountered have fostered resilience and adaptability,
+essential traits for navigating the dynamic landscape of technology and
+research.
+
+In conclusion,
+the signature work experience at DKU has been a holistic and enriching journey,
+seamlessly blending academic rigor with real-world applications.
+It serves as a testament to the efficacy of DKU's educational model and its
+commitment to nurturing well-rounded individuals prepared for the complexities
+of the global landscape.
