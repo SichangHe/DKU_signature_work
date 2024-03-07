@@ -134,9 +134,9 @@ Practical programming exercises and insightful case studies drawn from the vast
 expanse of the Internet enriched my comprehension of network concepts.
 
 The reverberations of COMPSCI 311 echoed profoundly in the context of my
-signature work,
-FedCampus. The in-depth exploration of TCP/IP and HTTP laid a robust foundation
-for deciphering the intricate dance of communication between smartphones and our
+signature work, FedCampus.
+The in-depth exploration of TCP/IP and HTTP laid a robust foundation for
+deciphering the intricate dance of communication between smartphones and our
 backend server. This knowledge, a direct outcome of the course,
 assumed paramount importance in understanding and optimizing the
 representational state transfer application programming interface (REST API)
@@ -170,8 +170,9 @@ where theory and practice, knowledge and skills,
 seamlessly melded to birth a project of profound impact.
 The tangible outcome of this amalgamation materialized in a demonstration paper
 accepted by the esteemed 2024 IEEE Conference on Computer Communications
-Workshops. This academic accolade underscored the transformative power of
-synthesizing theoretical knowledge, practical skills, and visionary ideas.
+Workshops.
+This academic accolade underscored the transformative power of synthesizing
+theoretical knowledge, practical skills, and visionary ideas.
 Collaborating harmoniously with the FedCampus team,
 we transformed concepts into reality,
 birthing The FedCampus Application in December 2023.
@@ -185,103 +186,28 @@ diverse fields,
 illustrating how academic proficiency transcends silos and converges into
 innovative solutions.
 
-Collaborative Problem-Solving, one of DKU's animating principles,
-permeated every facet of our FedCampus project.
-The interdisciplinary structure of our team reflected the seamless integration
-of knowledge from various domains,
-each member bringing a unique expertise that harmonized into a cohesive unit.
-The collaborative ethos ingrained in our team was not merely a strategic choice
-but an inherent response to the complex challenges we faced. This principle,
-as encapsulated in DKU's vision,
-was not a mere abstract ideal but a lived reality in the day-to-day operations
-of the FedCampus initiative.
+The experiential learning journey commenced with my immersive participation in
+the Summer Research Scholar Program,
+collaborating with Professor Bing Luo on the FedCampus project.
+This pivotal experience served as a transformative bridge,
+seamlessly connecting the theoretical foundations of academic preparation with
+the nuanced intricacies of real-world applications.
+Working alongside international collaborators,
+such as Flower Labs member Daniel Nata Nugraha from Germany and researcher Dr.
+Xiaomin Ouyang at the University of California, Los Angeles,
+exemplified the ethos of rooted globalism.
+The collaborative efforts not only transcended geographical boundaries but also
+underscored the interconnectedness of the global research community.
 
-Research and Practice, another foundational animating principle,
-found its resonance in the FedCampus project's journey.
-The ability to forge links between theory and practice, as advocated by DKU,
-became a navigational compass guiding our decision-making processes.
-The divisional foundations,
-which equipped us with basic skills for critical inquiry,
-seamlessly integrated with the experiential opportunities provided by the
-project.
-The practical application of theoretical concepts in the real-world scenario of
-FedCampus echoed the principle's emphasis on linking formal curriculum with
-hands-on practica.
-
-Lucid Communication, an animating principle focused on effective communication,
-emerged as a cornerstone throughout the FedCampus project. The common core,
-divisional foundation,
-and capstone courses provided numerous opportunities for sustained,
-guided practice in writing, speaking, and listening.
-These skills proved invaluable when articulating the intricate technicalities of
-our project to diverse audiences,
-ranging from fellow scholars to industry experts.
-The seminar-style size of most classes at DKU facilitated an environment where
-effective communication was not just encouraged but essential.
-
-Independence and Creativity, essential animating principles,
-found ample space for expression in the FedCampus journey.
-The liberal arts design of DKU's curriculum,
-with its emphasis on exploring ideas and seeking new experiences,
-provided a fertile ground for cultivating free inquiry and deep reflection.
-The FedCampus project, being inherently innovative,
-demanded a constant drive to ask interesting questions and find compelling
-answers.
-The choices among paths of study and electives at DKU empowered me to explore
-different facets of creativity,
-contributing to the unique perspectives I brought to the project.
-
-Wise Leadership,
-a principle embodying the moral compass to guide communities and institutions,
-became palpable in the leadership roles within the FedCampus team.
-The examination of the relationship between individuals and different levels of
-community, integral to DKU's core courses,
-manifested in the strategic decisions we made to steer the project toward a
-common good.
-The interdisciplinary studies and required practicum enriched our understanding
-of problems spanning national boundaries,
-aligning with the principle's emphasis on dealing effectively with complexity.
-
-A Purposeful Life, the animating principle aimed at forming reflective scholars,
-found its embodiment in the FedCampus project's reflection of core beliefs.
-Connecting the course of study to big questions of meaning became not just an
-academic exercise but a daily practice. The e-portfolio system at DKU,
-capturing the larger inquiry informing a student's pathway,
-allowed me to test and refine my core beliefs through the tangible outcomes of the FedCampus project.
-The intentional communities of meaning formed in core courses provided a
-supportive environment for this reflective journey.
-
-Examining the intersection between academic preparation, experiential learning,
-and the signature work,
-the FedCampus project stands as a testament to the effectiveness of the DKU
-model. The thematic courses, with their diverse explorations,
-set the stage for a comprehensive understanding of machine learning,
-network architecture, and artificial intelligence.
-The experiential learning activities,
-particularly the summer research scholar and various projects,
-acted as a bridge between theory and practice,
-aligning seamlessly with DKU's emphasis on linking formal curriculum with
-hands-on practice.
-
-The immersive journey into the FedCampus project through the Summer Research
-Scholar Program marked the inception of a transformative experience that
-seamlessly integrated theoretical foundations with the complexities of
-real-world applications.
-Collaborating with Professor Bing Luo and an international team,
-including the skilled Daniel Nata Nugraha from Flower Labs in Germany and Dr.
-Xiaomin Ouyang from the University of California, Los Angeles,
-vividly exemplified the ethos of rooted globalism.
-Our collaborative efforts not only transcended geographical boundaries but also
-underscored the interconnectedness of the global research community,
-setting the stage for an enriching exploration of federated learning.
-
-Transitioning into the role of a research assistant was a significant milestone,
-positioning me as a leader in the development of The FedCampus Application. This
-hands-on experience intricately aligned with DKU's animating principles,
-especially those of collaborative problem-solving. In recruiting a diverse team,
+Transitioning seamlessly into the role of a research assistant marked a
+significant milestone,
+where I assumed a leadership position in the development of The FedCampus
+Application.
+This hands-on experience intricately aligned with DKU's animating principles,
+especially those of collaborative problem-solving.
+The process of recruiting a diverse team,
 including a skilled user interface developer and designer,
-the interdisciplinary structure inherent in DKU's educational model became
-apparent.
+mirrored the interdisciplinary structure inherent in DKU's educational model.
 Our collective endeavor aimed to create a practical application of federated
 learning,
 harmonizing diverse viewpoints and skill sets—a tangible manifestation of DKU's
@@ -293,11 +219,11 @@ the principles of wise leadership and a purposeful life.
 By enhancing the capabilities of the broader research community,
 our work assumed a meaningful and community-driven dimension,
 echoing DKU's animating principles.
+
 The multifaceted experiential learning activities,
 ranging from collaborative research with international partners to the hands-on
 development of a real-world application,
 profoundly enriched my academic journey.
-
 The Summer Research Scholar Program provided an immersive experience within the
 FedCampus project,
 offering invaluable insights into the global landscape of federated learning.
@@ -305,6 +231,7 @@ As a research assistant,
 active participation in the entire development lifecycle of The FedCampus
 Application, from conceptualization to deployment,
 further solidified my experiential learning.
+
 These experiences collectively enhanced a spectrum of skills,
 ranging from technical expertise in machine learning, networking,
 and software development to interdisciplinary collaboration and leadership.
@@ -372,7 +299,3 @@ complexities of the global landscape.
 This transformative journey has not only fortified my academic and professional
 repertoire but has also instilled in me a profound sense of purpose and a
 readiness to embrace the challenges and opportunities that lie ahead.
-The fusion of theoretical knowledge, experiential learning,
-and the application of DKU's animating principles has sculpted not just a
-skilled professional but a reflective scholar ready to contribute meaningfully
-to the ever-evolving realms of technology and global collaboration.
