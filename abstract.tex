@@ -1,0 +1,128 @@
+%! TEX program = xelatex
+\documentclass[11pt,a4paper,oneside]{report}
+
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\sffamily\bfseries\huge}
+{\Large \chaptertitlename\ \thechapter}
+{2ex}
+{\titlerule
+    \vspace{1ex}%
+    \filright\MakeUppercase}
+[\vspace{1ex}%
+    \titlerule]
+\titleformat{\section}{\normalfont\sffamily\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\sffamily\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\usepackage[style=numeric-comp, url=false]{biblatex}
+\addbibresource{bibfile.bib}
+
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Termes}
+
+\usepackage{upquote}
+\usepackage[allcolors=blue,colorlinks=true]{hyperref}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage{bookmark}
+\usepackage{calc}
+\usepackage{etoolbox}
+
+\urlstyle{same}
+
+\usepackage{pifont}  % for the checkmark/crossmark
+\usepackage{graphicx}
+
+\usepackage{algorithmic}
+\usepackage[ruled]{algorithm2e}
+
+\usepackage{xspace}
+\newcommand{\fedcampus}{\textsc{FedCampus}\xspace}
+\newcommand{\fedkit}{\textsc{FedKit}\xspace}
+
+\begin{document}
+
+
+% Author name (capitalized in its regular way)
+\newcommand{\authorname}{Steven Hé (Sīchàng)}
+
+% Title (cannot exceed three lines)
+\newcommand{\thetitle}{Integrating Federated Learning for \fedcampus,
+    A Privacy-Preserving Data Platform for Smart Campuses
+}
+
+% Date of submission with normal capitalization. Use the format January 29, 2022.
+\newcommand{\submissiondate}{March 7, 2024}
+
+% Mentor: First Name Last Name (normal capitalization)
+\newcommand{\mentor}{Bing Luo}
+
+% Academic Unit (no abbreviations)
+\newcommand{\academicunit}{Division of Natural and Applied Sciences}
+
+\vspace*{\bigskipamount}
+
+\begin{center}
+    {\sffamily\LARGE\bfseries\MakeUppercase\thetitle\par}
+
+    \bigskip
+
+    by
+
+    \bigskip
+
+    {\Large \authorname}
+
+    \bigskip
+
+    Mentor: \mentor, \academicunit\\[12pt]
+    Signature Work Product, in partial fulfillment of the \\
+    Duke Kunshan University Undergraduate Degree Program
+
+    \bigskip
+
+    \emph{\submissiondate}
+
+    \bigskip
+
+    Signature Work Program \\
+    Duke Kunshan University
+
+\end{center}
+
+\vfill
+
+\emph{\textbf{Abstract.}}
+\fedcampus endeavors to establish a privacy-preserving data platform for
+university campuses,
+extracting valuable insights while preserving participants' privacy.
+This initial phase focuses on accessing personal health data on participants'
+smartphones and executing cross-platform federated learning. Federated learning,
+a privacy-preserving machine learning technique,
+enables model training across multiple edge devices without centralizing raw
+data. However,
+challenges brought by \fedcampus' advanced requirements for real-world federated
+learning on smartphones, including cross-platform support,
+dependency on application updates, and interdisciplinary collaboration,
+were not addressed by existing federated learning systems. \fedkit,
+our innovative software development kits,
+address these challenges through a machine learning model pipeline and machine
+learning operations support.
+Experiments were conducted in both lab-based settings and on The \fedcampus
+Application, a smartphone application deployed among students, staff,
+and faculty at Duke Kunshan University.
+Results underscored the effectiveness of \fedkit and the feasibility of
+\fedcampus' overall approach,
+paving the way for future advancements towards a comprehensive data platform.
+
+\vspace{4\bigskipamount}
+
+\end{document}
